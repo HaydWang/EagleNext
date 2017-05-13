@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/time_outline_padding_left"
+                android:keepScreenOn="true">
+
+    <com.cnh.android.eaglenext.widget.LedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="88:88:88"
+            android:textColor="#3300ff00"
+            android:textSize="@dimen/time_text_size"/>
+
+    <com.cnh.android.eaglenext.widget.LedTextView
+            android:id="@+id/tv_clock_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:shadowRadius="@integer/time_light_strength"
+            android:shadowDx="@integer/time_light_strength"
+            android:shadowDy="@integer/time_light_strength"
+            android:shadowColor="#00ff00"
+            android:textColor="#00ff00"
+            android:textSize="@dimen/time_text_size"/>
+
+</RelativeLayout>

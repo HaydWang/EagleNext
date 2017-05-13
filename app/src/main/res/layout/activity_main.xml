@@ -1,0 +1,211 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+
+    <LinearLayout
+            android:id="@+id/main_cotainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        <!-- Top Bar -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/topbar_height"
+                android:orientation="horizontal"
+                android:elevation="10dp"
+                android:background="#F0F0F0">
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_block_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#e34528"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_warning_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#e34528"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_info_outline_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#e34528"/>
+
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginLeft="@dimen/button_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_satellite_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#fefefe"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_live_help_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#fefefe"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_wifi_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#fefefe"/>
+
+            <!-- Center clock area -->
+            <View android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_weight="1" />
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/time_outline_margin"
+                    android:layout_marginBottom="@dimen/time_outline_margin"
+                    android:paddingLeft="@dimen/button_margin"
+                    android:paddingRight="@dimen/button_margin"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:elevation="2dp"
+                    android:background="@drawable/background_corners">
+
+                <!-- LED Clock -->
+                <include layout="@layout/widget_led_clock"/>
+
+                <!-- Loading apps button -->
+                <ImageButton
+                        android:layout_width="@dimen/app_button_width"
+                        android:layout_height="@dimen/app_button_width"
+                        android:paddingLeft="@dimen/button_margin"
+                        android:src="@drawable/ic_apps_black_48dp"
+                        android:scaleType="centerInside"
+                        android:background="#FFFFFF"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1" />
+
+            <!-- Main buttons area -->
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_reorder_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#33b5e5"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_pin_drop_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#33b5e5"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginRight="@dimen/button_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_person_outline_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#33b5e5"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginRight="@dimen/button_margin"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_show_chart_black_48dp"
+                    android:scaleType="fitCenter"
+                    android:background="#fefefe"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            <!-- Left Bar -->
+            <LinearLayout
+                    android:layout_width="@dimen/leftbar_width"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:elevation="6dp"
+                    android:background="#6E6E6E">
+
+                <!-- UDW left list -->
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerview_leftbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/udw_margin"
+                        android:layout_gravity="center_horizontal"
+                        android:elevation="2dp"
+                        android:fadeScrollbars="true"/>
+
+            </LinearLayout>
+
+            <!-- Content -->
+            <LinearLayout
+                    android:id="@+id/content_cotainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="#A2A2A2">
+
+                <include layout="@layout/content_main"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <!--<FrameLayout android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:fitsSystemWindows="true">-->
+
+    <!--<LinearLayout android:id="@+id/fullscreen_content_controls"-->
+    <!--style="?metaButtonBarStyle"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|center_horizontal"-->
+    <!--android:background="@color/black_overlay"-->
+    <!--android:orientation="horizontal"-->
+    <!--tools:ignore="UselessParent">-->
+
+    <!--<Button android:id="@+id/dummy_button"-->
+    <!--style="?metaButtonBarButtonStyle"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/dummy_button"/>-->
+
+    <!--</LinearLayout>-->
+    <!--</FrameLayout>-->
+
+</FrameLayout>

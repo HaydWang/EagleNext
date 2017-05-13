@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference"/>
+        <attr name="metaButtonBarButtonStyle" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SquareMenu">
+        <attr name="fabSize" format="integer" />
+        <attr name="fabColor" format="color" />
+        <attr name="squareFabSize" format="integer" />
+        <attr name="menuOpenDirection" format="string" />
+        <attr name="iconM1" format="integer" />
+        <attr name="iconM2" format="integer" />
+        <attr name="iconM3" format="integer" />
+    </declare-styleable>
+</resources>

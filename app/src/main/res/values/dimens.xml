@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 160dp -->
+    <dimen name="corner_radius">2dp</dimen>
+
+    <dimen name="topbar_height">48dp</dimen>
+    <dimen name="leftbar_width">96dp</dimen>
+
+    <dimen name="button_width">32dp</dimen>
+    <dimen name="button_height">32dp</dimen>
+
+    <dimen name="app_button_width">24dp</dimen>
+    <dimen name="app_button_height">24dp</dimen>
+
+    <dimen name="button_margin">2dp</dimen>
+    <dimen name="button_group_margin">4dp</dimen>
+
+    <dimen name="time_outline_margin">4dp</dimen>
+    <dimen name="time_outline_padding_left">0dp</dimen>
+    <dimen name="time_text_size">14sp</dimen>
+    <integer name="time_light_strength">2</integer>
+
+    <dimen name="udw_width">90dp</dimen>
+    <dimen name="udw_height">72dp</dimen>
+    <dimen name="udw_margin">2dp</dimen>
+    <dimen name="udw_icon_margin">2dp</dimen>
+    <dimen name="udw_icon_width">56dp</dimen>
+    <dimen name="udw_icon_height">56dp</dimen>
+    <dimen name="udw_caption_text_size">12sp</dimen>
+    <dimen name="udw_description_text_size">18sp</dimen>
+    <dimen name="udw_switch_text_size">12sp</dimen>
+    <item name="udw_switch_scale" format="float" type="dimen">1</item>
+    <dimen name="udw_button_width">16dp</dimen>
+    <dimen name="udw_button_height">16dp</dimen>
+    <dimen name="udw_button_margin">2dp</dimen>
+</resources>
