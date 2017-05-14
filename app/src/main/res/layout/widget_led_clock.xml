@@ -11,7 +11,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:text="88:88:88"
-            android:textColor="#3300ff00"
+            android:textColor="#330000FF"
             android:textSize="@dimen/time_text_size"/>
 
     <com.cnh.android.eaglenext.widget.LedTextView
@@ -23,8 +23,8 @@
             android:shadowRadius="@integer/time_light_strength"
             android:shadowDx="@integer/time_light_strength"
             android:shadowDy="@integer/time_light_strength"
-            android:shadowColor="#00ff00"
-            android:textColor="#00ff00"
+            android:shadowColor="@color/colorAccent"
+            android:textColor="@color/colorAccent"
             android:textSize="@dimen/time_text_size"/>
 
 </RelativeLayout>

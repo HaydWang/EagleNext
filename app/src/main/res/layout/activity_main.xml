@@ -14,65 +14,13 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/topbar_height"
+                android:paddingLeft="@dimen/button_margin"
+                android:paddingRight="@dimen/button_margin"
                 android:orientation="horizontal"
                 android:elevation="10dp"
-                android:background="#F0F0F0">
+                android:background="#D0D0D0">
 
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_marginLeft="@dimen/button_margin"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_block_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#e34528"/>
-
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_warning_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#e34528"/>
-
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_info_outline_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#e34528"/>
-
-
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_marginLeft="@dimen/button_group_margin"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_satellite_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#fefefe"/>
-
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_live_help_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#fefefe"/>
-
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_wifi_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#fefefe"/>
-
-            <!-- Center clock area -->
-            <View android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:layout_weight="1" />
-
+            <!-- Status Info Area -->
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -83,7 +31,93 @@
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:elevation="2dp"
+                    android:elevation="0dp"
+                    android:background="@drawable/background_corner_info">
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_block_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginLeft="@dimen/button_margin"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_warning_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginLeft="@dimen/button_margin"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_info_outline_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_weight="1" />
+
+            <!-- Connectivity Area-->
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/time_outline_margin"
+                    android:layout_marginBottom="@dimen/time_outline_margin"
+                    android:layout_marginRight="@dimen/button_group_margin"
+                    android:paddingLeft="@dimen/button_group_margin"
+                    android:paddingRight="@dimen/button_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:elevation="0dp"
+                    android:background="@android:color/transparent">
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_satellite_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_live_help_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_wifi_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+            <!-- Center clock area -->
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/time_outline_margin"
+                    android:layout_marginBottom="@dimen/time_outline_margin"
+                    android:paddingLeft="@dimen/button_margin"
+                    android:paddingRight="@dimen/button_margin"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:elevation="4dp"
                     android:background="@drawable/background_corners">
 
                 <!-- LED Clock -->
@@ -96,7 +130,7 @@
                         android:paddingLeft="@dimen/button_margin"
                         android:src="@drawable/ic_apps_black_48dp"
                         android:scaleType="centerInside"
-                        android:background="#FFFFFF"/>
+                        android:background="@android:color/transparent"/>
 
             </LinearLayout>
 
@@ -105,40 +139,54 @@
                   android:layout_weight="1" />
 
             <!-- Main buttons area -->
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_marginLeft="@dimen/button_margin"
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/time_outline_margin"
+                    android:layout_marginBottom="@dimen/time_outline_margin"
+                    android:paddingLeft="@dimen/button_margin"
+                    android:paddingRight="@dimen/button_margin"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_reorder_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#33b5e5"/>
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:elevation="4dp"
+                    android:background="@drawable/background_corner_main_buttons">
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_reorder_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_pin_drop_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+                <ImageButton
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_person_outline_black_48dp"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"/>
+
+            </LinearLayout>
 
             <ImageButton
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_pin_drop_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#33b5e5"/>
-
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_marginRight="@dimen/button_group_margin"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_person_outline_black_48dp"
-                    android:scaleType="fitCenter"
-                    android:background="#33b5e5"/>
-
-            <ImageButton
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
+                    android:layout_marginLeft="@dimen/button_group_margin"
                     android:layout_marginRight="@dimen/button_margin"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/ic_show_chart_black_48dp"
                     android:scaleType="fitCenter"
-                    android:background="#fefefe"/>
+                    android:background="@drawable/background_corner_button_white"/>
 
         </LinearLayout>
 
@@ -153,33 +201,31 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:elevation="6dp"
-                    android:background="#6E6E6E">
+                    android:background="#7E7E7E">
 
                 <!-- UDW left list -->
                 <android.support.v7.widget.RecyclerView
                         android:id="@+id/recyclerview_leftbar"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/udw_margin"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/udw_list_margin"
+                        android:layout_marginBottom="@dimen/udw_list_margin"
                         android:layout_gravity="center_horizontal"
-                        android:elevation="2dp"
                         android:fadeScrollbars="true"/>
 
             </LinearLayout>
 
-            <!-- Content -->
-            <LinearLayout
-                    android:id="@+id/content_cotainer"
+            <!-- Fragment Content -->
+            <FrameLayout
+                    android:id="@+id/fragments_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="#A2A2A2">
+                    android:background="#F0F0F0">
 
-                <include layout="@layout/content_main"/>
-
-            </LinearLayout>
+            </FrameLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 
 

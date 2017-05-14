@@ -4,9 +4,10 @@
               android:orientation="horizontal"
               android:layout_width="@dimen/udw_width"
               android:layout_height="@dimen/udw_height"
-              android:layout_margin="@dimen/udw_margin"
+              android:layout_marginTop="@dimen/udw_margin"
+              android:layout_marginBottom="@dimen/udw_margin"
               android:elevation="4dp"
-              android:background="@drawable/background_corners">
+              android:background="@drawable/background_corner_card">
 
     <ImageView
             android:id="@+id/udw_icon"
@@ -67,7 +68,7 @@
         android:layout_marginRight="@dimen/udw_icon_margin"
         android:layout_margin="@dimen/udw_icon_margin"
         android:src="@drawable/ic_sync_white_48dp"
-        android:background="@drawable/background_corner_button"
+        android:background="@drawable/background_corner_button_blue"
         android:scaleType="centerInside"
         android:visibility="gone"/>
 

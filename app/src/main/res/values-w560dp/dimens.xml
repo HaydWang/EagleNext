@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="corner_radius">2dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
 
     <dimen name="topbar_height">64dp</dimen>
-    <dimen name="leftbar_width">140dp</dimen>
+    <dimen name="leftbar_width">152dp</dimen>
 
-    <dimen name="button_width">44dp</dimen>
-    <dimen name="button_height">44dp</dimen>
+    <dimen name="button_width">40dp</dimen>
+    <dimen name="button_height">40dp</dimen>
 
     <dimen name="app_button_width">40dp</dimen>
     <dimen name="app_button_height">40dp</dimen>
@@ -19,9 +19,10 @@
     <dimen name="time_text_size">24sp</dimen>
     <integer name="time_light_strength">3</integer>
 
-    <dimen name="udw_width">138dp</dimen>
+    <dimen name="udw_list_margin">7dp</dimen>
+    <dimen name="udw_width">140dp</dimen>
     <dimen name="udw_height">56dp</dimen>
-    <dimen name="udw_margin">1dp</dimen>
+    <dimen name="udw_margin">4dp</dimen>
     <dimen name="udw_icon_margin">4dp</dimen>
     <dimen name="udw_icon_width">24dp</dimen>
     <dimen name="udw_icon_height">24dp</dimen>

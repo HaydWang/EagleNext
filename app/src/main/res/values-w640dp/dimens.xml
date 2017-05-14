@@ -3,10 +3,10 @@
     <dimen name="corner_radius">4dp</dimen>
 
     <dimen name="topbar_height">72dp</dimen>
-    <dimen name="leftbar_width">164dp</dimen>
+    <dimen name="leftbar_width">172dp</dimen>
 
-    <dimen name="button_width">52dp</dimen>
-    <dimen name="button_height">52dp</dimen>
+    <dimen name="button_width">48dp</dimen>
+    <dimen name="button_height">48dp</dimen>
 
     <dimen name="app_button_width">40dp</dimen>
     <dimen name="app_button_height">40dp</dimen>
@@ -15,13 +15,14 @@
     <dimen name="button_group_margin">12dp</dimen>
 
     <dimen name="time_outline_margin">10dp</dimen>
-    <dimen name="time_outline_padding_left">0dp</dimen>
+    <dimen name="time_outline_padding_left">0dp</dimen>d
     <dimen name="time_text_size">28sp</dimen>
     <integer name="time_light_strength">5</integer>
 
-    <dimen name="udw_width">160dp</dimen>
+    <dimen name="udw_list_margin">9dp</dimen>
+    <dimen name="udw_width">162dp</dimen>
     <dimen name="udw_height">64dp</dimen>
-    <dimen name="udw_margin">1dp</dimen>
+    <dimen name="udw_margin">3dp</dimen>
     <dimen name="udw_icon_margin">6dp</dimen>
     <dimen name="udw_icon_width">28dp</dimen>
     <dimen name="udw_icon_height">28dp</dimen>

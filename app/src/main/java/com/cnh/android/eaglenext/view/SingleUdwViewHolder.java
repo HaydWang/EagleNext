@@ -63,7 +63,7 @@ public class SingleUdwViewHolder extends RecyclerView.ViewHolder {
 
             holder.buttonView.setVisibility(buttonVisible ? View.VISIBLE : View.GONE);
 
-            holder.itemView.setBackgroundResource(R.drawable.background_corners);
+            holder.itemView.setBackgroundResource(R.drawable.background_corner_card);
         }
 
         public UdwItem(Context context, int id, String sId, String packageName, String className) {

@@ -38,6 +38,7 @@ public class SingleUdwRecyclerViewAdapter extends RecyclerView.Adapter<SingleUdw
 
     @Override
     public void onSelectedChanged(RecyclerView.ViewHolder viewHolder) {
+        // TODO: use corner shape
         viewHolder.itemView.setBackgroundColor(mContext.getResources().getColor(R.color.colorAccent));
     }
 
@@ -45,7 +46,7 @@ public class SingleUdwRecyclerViewAdapter extends RecyclerView.Adapter<SingleUdw
     public void clearView(RecyclerView.ViewHolder viewHolder) {
         if (viewHolder.getAdapterPosition() < 0 ) return;
 
-        viewHolder.itemView.setBackgroundResource(R.drawable.background_corners);
+        viewHolder.itemView.setBackgroundResource(R.drawable.background_corner_card);
     }
 
     public static class SpaceItemDecoration extends RecyclerView.ItemDecoration {

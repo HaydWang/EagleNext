@@ -20,6 +20,7 @@
     <dimen name="time_text_size">14sp</dimen>
     <integer name="time_light_strength">2</integer>
 
+    <dimen name="udw_list_margin">6dp</dimen>
     <dimen name="udw_width">90dp</dimen>
     <dimen name="udw_height">72dp</dimen>
     <dimen name="udw_margin">2dp</dimen>

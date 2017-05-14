@@ -2,6 +2,7 @@ package com.cnh.android.eaglenext;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -12,6 +13,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.cnh.android.eaglenext.fragment.OverviewFragment;
 import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
 import com.cnh.android.eaglenext.view.SingleUdwViewHolder;
@@ -23,7 +25,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.main_cotainer) View mFrameLayoutMain;
     @BindView(R.id.recyclerview_leftbar) RecyclerView mLeftUdwListView;
-    @BindView(R.id.recyclerview_main) RecyclerView mMainUdwListView;
+
+    OverviewFragment mFragmentOverview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +49,10 @@ public class MainActivity extends AppCompatActivity {
         mLeftUdwListView.setItemAnimator(new DefaultItemAnimator());
         mLeftUdwListView.setAdapter(adapter);
 
-
-        adapter = new SingleUdwRecyclerViewAdapter(this);
-        adapter.setData(generateDummyUdws());
-        itemTouchHelper = new ItemTouchHelper(
-                new RecyclerItemTouchHelperCallback(adapter));
-        itemTouchHelper.attachToRecyclerView(mMainUdwListView);
-        mMainUdwListView.setLayoutManager(new StaggeredGridLayoutManager(3, OrientationHelper.VERTICAL));
-        mMainUdwListView.setItemAnimator(new DefaultItemAnimator());
-        mMainUdwListView.setAdapter(adapter);
-
+        mFragmentOverview = new OverviewFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragments_container, mFragmentOverview);
+        transaction.commit();
     }
 
     @Override
