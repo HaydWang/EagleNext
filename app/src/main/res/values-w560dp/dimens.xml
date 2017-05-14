@@ -34,8 +34,22 @@
     <dimen name="udw_button_height">24dp</dimen>
     <dimen name="udw_button_margin">8dp</dimen>
 
-    <dimen name="card_margin">4dp</dimen>
     <dimen name="fragment_stroke">2dp</dimen>
-    <dimen name="overview_vehicle_width">125dp</dimen>
-    <dimen name="overview_vehicle_height">105dp</dimen>
+    <dimen name="overview_vehicle_width">120dp</dimen>
+    <dimen name="overview_vehicle_height">100dp</dimen>
+
+    <dimen name="card_margin">4dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_controller_width">190dp</dimen>
+    <dimen name="card_controller_height">40dp</dimen>
+    <dimen name="card_icon_width">32dp</dimen>
+    <dimen name="card_icon_height">32dp</dimen>
+    <dimen name="card_button_width">32dp</dimen>
+    <dimen name="card_button_height">32dp</dimen>
+    <dimen name="card_map_width">172dp</dimen>
+    <dimen name="card_map_height">172dp</dimen>
+    <dimen name="card_map_view_width">160dp</dimen>
+    <dimen name="card_map_view_height">160dp</dimen>
+    <dimen name="card_user_width">105dp</dimen>
+    <dimen name="card_user_height">@dimen/card_map_height</dimen>
 </resources>

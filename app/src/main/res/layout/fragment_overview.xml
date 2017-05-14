@@ -15,14 +15,16 @@
             android:elevation="@dimen/vehicle_card_elevation"
             android:background="@drawable/background_fragment_overview">
 
-        <!-- Left description divide -->
-        <View android:layout_width="1dp"
-              android:layout_height="0dp"
-              android:layout_marginRight="@dimen/widget_group_margin"
-              android:layout_toLeftOf="@+id/vehicle_description_left"
-              android:layout_alignTop="@+id/vehicle_description_left"
-              android:layout_alignBottom="@+id/vehicle_description_left"
-              android:background="@color/vehicle_text_color"/>
+        <!-- Vehicle Image -->
+        <ImageView
+                android:id="@+id/imageview_vehicle"
+                android:layout_width="@dimen/overview_vehicle_width"
+                android:layout_height="@dimen/overview_vehicle_height"
+                android:layout_marginLeft="@dimen/widget_group_margin"
+                android:layout_marginRight="@dimen/widget_group_margin"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tractor"/>
 
         <!-- Left description text -->
         <LinearLayout
@@ -30,8 +32,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/widget_group_margin"
-                android:layout_toLeftOf="@+id/imageview_vehicle"
-                android:layout_alignBottom="@+id/imageview_vehicle"
+                android:layout_toLeftOf="@id/imageview_vehicle"
+                android:layout_alignBottom="@id/imageview_vehicle"
                 android:orientation="vertical">
 
             <!-- TODO: use format textview to avoid layout -->
@@ -74,23 +76,13 @@
 
         </LinearLayout>
 
-        <!-- Vehicle Image -->
-        <ImageView
-                android:id="@+id/imageview_vehicle"
-                android:layout_width="@dimen/overview_vehicle_width"
-                android:layout_height="@dimen/overview_vehicle_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_marginRight="@dimen/widget_group_margin"
-                android:layout_centerHorizontal="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/tractor"/>
-
-        <!-- Right description divide -->
+        <!-- Left description divide -->
         <View android:layout_width="1dp"
               android:layout_height="0dp"
-              android:layout_toLeftOf="@+id/vehicle_description_right"
-              android:layout_alignTop="@+id/vehicle_description_right"
-              android:layout_alignBottom="@+id/vehicle_description_right"
+              android:layout_marginRight="@dimen/widget_group_margin"
+              android:layout_toLeftOf="@id/vehicle_description_left"
+              android:layout_alignTop="@id/vehicle_description_left"
+              android:layout_alignBottom="@id/vehicle_description_left"
               android:background="@color/vehicle_text_color"/>
 
         <!-- Right description text -->
@@ -99,8 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_toRightOf="@+id/imageview_vehicle"
-                android:layout_alignBottom="@+id/vehicle_description_left"
+                android:layout_toRightOf="@id/imageview_vehicle"
+                android:layout_alignBottom="@id/vehicle_description_left"
                 android:orientation="vertical">
 
             <!-- TODO: use format textview to avoid layout -->
@@ -137,381 +129,248 @@
 
         </LinearLayout>
 
+        <!-- Right description divide -->
+        <View android:layout_width="1dp"
+              android:layout_height="0dp"
+              android:layout_toLeftOf="@id/vehicle_description_right"
+              android:layout_alignTop="@id/vehicle_description_right"
+              android:layout_alignBottom="@+id/vehicle_description_right"
+              android:background="@color/vehicle_text_color"/>
+
     </RelativeLayout>
 
+    <!-- Cards Area -->
+    <!-- Controller Cards List -->
+    <LinearLayout
+            android:id="@+id/linearlayout_controller_cards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/card_margin"
+            android:layout_below="@id/framelayout_vehicle_area"
+            android:orientation="vertical">
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_marginLeft="@dimen/widget_margin"
-                  android:layout_marginRight="@dimen/widget_margin"
-                  android:orientation="vertical"
-                  android:visibility="gone">
+        <android.support.v7.widget.CardView
+                android:layout_width="@dimen/card_controller_width"
+                android:layout_height="@dimen/card_controller_height"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="false"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/controller_card_elevation">
 
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:padding="@dimen/widget_margin"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical">
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical"
-                      android:elevation="4dp"
-                      android:background="@drawable/background_fragment_overview">
+                <ImageView android:layout_width="@dimen/card_icon_width"
+                           android:layout_height="@dimen/card_icon_height"
+                           android:scaleType="fitCenter"
+                           android:src="@drawable/vector_drawable_steering"/>
 
+                <View android:layout_width="1dp"
+                      android:layout_height="match_parent"
+                      android:layout_marginLeft="@dimen/widget_margin"
+                      android:layout_marginRight="@dimen/widget_margin"
+                      android:background="@color/card_divider_color"/>
 
-        </LinearLayout>
+                <android.support.v7.widget.SwitchCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:checked="true"
+                        android:textSize="@dimen/udw_switch_text_size"
+                        android:textStyle="bold"
+                        android:text="Auto Driver"/>
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="horizontal">
+            </LinearLayout>
 
-            <!-- Cards List -->
-            <LinearLayout android:layout_width="wrap_content"
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+                android:layout_width="@dimen/card_controller_width"
+                android:layout_height="@dimen/card_controller_height"
+                android:layout_marginTop="@dimen/card_margin"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="false"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/controller_card_elevation">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:padding="@dimen/card_margin"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical">
+
+                <ImageView android:layout_width="@dimen/card_icon_width"
+                           android:layout_height="@dimen/card_icon_height"
+                           android:scaleType="fitCenter"
+                           android:src="@drawable/vector_drawable_distance_count"/>
+
+                <View android:layout_width="1dp"
+                      android:layout_height="match_parent"
+                      android:layout_marginLeft="@dimen/widget_margin"
+                      android:layout_marginRight="@dimen/widget_margin"
+                      android:background="@color/card_divider_color"/>
+
+                <TextView android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
-                          android:orientation="vertical">
+                          android:textSize="@dimen/udw_switch_text_size"
+                          android:textStyle="bold"
+                          android:text="Distance Count"/>
 
-                <android.support.v7.widget.CardView
-                        android:layout_width="380dp"
-                        android:layout_height="96dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="false"
-                        app:cardCornerRadius="4dp"
-                        app:cardElevation="4dp">
+                <View android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"/>
 
-                    <LinearLayout android:layout_width="match_parent"
-                                  android:layout_height="wrap_content"
-                                  android:padding="@dimen/widget_margin"
-                                  android:orientation="horizontal"
-                                  android:gravity="center_vertical">
+                <Button android:layout_width="@dimen/card_button_width"
+                        android:layout_height="@dimen/card_button_height"
+                        android:text="A"
+                        android:textSize="@dimen/udw_switch_text_size"
+                        android:background="@drawable/background_cycle_button"/>
 
-                        <ImageView android:layout_width="48dp"
-                                   android:layout_height="48dp"
-                                   android:layout_marginLeft="@dimen/udw_icon_margin"
-                                   android:layout_marginRight="@dimen/udw_icon_margin"
-                                   android:scaleType="fitCenter"
-                                   android:src="@drawable/vector_drawable_steering"/>
+                <!-- TODO: collapse-able card view to show all buttons -->
+                <!-- <Button android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_marginRight="@dimen/udw_icon_margin"-->
+                <!--android:text="B"-->
+                <!--android:textSize="@dimen/udw_switch_text_size"-->
+                <!--android:background="@drawable/background_cycle_button"/>-->
 
-                        <View android:layout_width="2dp" android:layout_height="wrap_content"
-                              android:background="@drawable/cardview_divider"/>
+                <!--<Button android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_marginRight="@dimen/udw_icon_margin"-->
+                <!--android:text="C"-->
+                <!--android:textSize="@dimen/udw_switch_text_size"-->
+                <!--android:background="@drawable/background_cycle_button"/>-->
+            </LinearLayout>
 
-                        <android.support.v7.widget.SwitchCompat
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/udw_icon_margin"
-                                android:layout_marginRight="@dimen/udw_icon_margin"
-                                android:checked="true"
-                                android:textSize="@dimen/udw_switch_text_size"
-                                android:textStyle="bold"
-                                android:text="Auto Driver"/>
+        </android.support.v7.widget.CardView>
 
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+                android:layout_width="@dimen/card_controller_width"
+                android:layout_height="@dimen/card_controller_height"
+                android:layout_marginTop="@dimen/card_margin"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="false"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/controller_card_elevation">
 
-                <android.support.v7.widget.CardView
-                        android:layout_width="380dp"
-                        android:layout_height="96dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="false"
-                        app:cardCornerRadius="4dp"
-                        app:cardElevation="4dp">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:padding="@dimen/widget_margin"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical">
 
-                    <LinearLayout android:layout_width="match_parent"
-                                  android:layout_height="wrap_content"
-                                  android:padding="@dimen/widget_margin"
-                                  android:orientation="horizontal"
-                                  android:showDividers="none"
-                                  android:divider="@drawable/cardview_divider"
-                                  android:gravity="center_vertical">
+                <ImageView android:layout_width="@dimen/card_icon_width"
+                           android:layout_height="@dimen/card_icon_height"
+                           android:scaleType="fitCenter"
+                           android:src="@drawable/vector_drawable_implement"/>
 
-                        <ImageView android:layout_width="48dp"
-                                   android:layout_height="48dp"
-                                   android:layout_marginLeft="@dimen/udw_icon_margin"
-                                   android:layout_marginRight="@dimen/udw_icon_margin"
-                                   android:scaleType="fitCenter"
-                                   android:src="@drawable/vector_drawable_distance_count"/>
+                <View android:layout_width="1dp"
+                      android:layout_height="match_parent"
+                      android:layout_marginLeft="@dimen/widget_margin"
+                      android:layout_marginRight="@dimen/widget_margin"
+                      android:background="@color/card_divider_color"/>
 
-                        <View android:layout_width="2dp"
-                              android:layout_height="wrap_content"
-                              android:background="@drawable/cardview_divider"/>
-
-                        <TextView android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:layout_marginLeft="@dimen/udw_icon_margin"
-                                  android:layout_marginRight="@dimen/udw_icon_margin"
-                                  android:textSize="@dimen/udw_switch_text_size"
-                                  android:textStyle="bold"
-                                  android:text="Distance Count"/>
-
-                        <View android:layout_width="match_parent"
-                              android:layout_height="wrap_content"
-                              android:layout_weight="1"/>
-
-                        <Button android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginRight="@dimen/udw_icon_margin"
-                                android:text="A"
-                                android:textSize="@dimen/udw_switch_text_size"
-                                android:background="@drawable/background_cycle_button"/>
-
-                        <Button android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginRight="@dimen/udw_icon_margin"
-                                android:text="B"
-                                android:textSize="@dimen/udw_switch_text_size"
-                                android:background="@drawable/background_cycle_button"/>
-
-                        <Button android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginRight="@dimen/udw_icon_margin"
-                                android:text="C"
-                                android:textSize="@dimen/udw_switch_text_size"
-                                android:background="@drawable/background_cycle_button"/>
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                        android:layout_width="380dp"
-                        android:layout_height="96dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="false"
-                        app:cardCornerRadius="4dp"
-                        app:cardElevation="4dp">
-
-                    <LinearLayout android:layout_width="match_parent"
-                                  android:layout_height="wrap_content"
-                                  android:padding="@dimen/widget_margin"
-                                  android:orientation="horizontal"
-                                  android:gravity="center_vertical">
-
-                        <ImageView android:layout_width="48dp"
-                                   android:layout_height="48dp"
-                                   android:layout_marginLeft="@dimen/udw_icon_margin"
-                                   android:layout_marginRight="@dimen/udw_icon_margin"
-                                   android:scaleType="fitCenter"
-                                   android:src="@drawable/vector_drawable_implement"/>
-
-                        <View android:layout_width="2dp" android:layout_height="wrap_content"
-                              android:background="@drawable/cardview_divider"/>
-
-                        <android.support.v7.widget.SwitchCompat
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/udw_icon_margin"
-                                android:layout_marginRight="@dimen/udw_icon_margin"
-                                android:checked="false"
-                                android:textSize="@dimen/udw_switch_text_size"
-                                android:text="Implement"/>
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                        android:layout_width="380dp"
-                        android:layout_height="96dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="false"
-                        app:cardCornerRadius="4dp"
-                        app:cardElevation="4dp">
-
-                    <LinearLayout android:layout_width="match_parent"
-                                  android:layout_height="wrap_content"
-                                  android:padding="@dimen/widget_margin"
-                                  android:orientation="horizontal"
-                                  android:showDividers="none"
-                                  android:divider="@drawable/cardview_divider"
-                                  android:gravity="center_vertical">
-
-                        <ImageView android:layout_width="48dp"
-                                   android:layout_height="48dp"
-                                   android:layout_marginLeft="@dimen/udw_icon_margin"
-                                   android:layout_marginRight="@dimen/udw_icon_margin"
-                                   android:scaleType="fitCenter"
-                                   android:src="@drawable/vector_drawable_logging"/>
-
-                        <View android:layout_width="2dp"
-                              android:layout_height="wrap_content"
-                              android:background="@drawable/cardview_divider"/>
-
-                        <TextView android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:layout_marginLeft="@dimen/udw_icon_margin"
-                                  android:layout_marginRight="@dimen/udw_icon_margin"
-                                  android:textSize="@dimen/udw_switch_text_size"
-                                  android:textStyle="bold"
-                                  android:text="Coverage Logging"/>
-
-                        <View android:layout_width="match_parent"
-                              android:layout_height="wrap_content"
-                              android:layout_weight="1"/>
-
-                        <Button android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginRight="@dimen/udw_icon_margin"
-                                android:text="A"
-                                android:textSize="@dimen/udw_switch_text_size"
-                                android:background="@drawable/background_cycle_button"/>
-
-                        <Button android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginRight="@dimen/udw_icon_margin"
-                                android:text="B"
-                                android:textSize="@dimen/udw_switch_text_size"
-                                android:background="@drawable/background_cycle_button"/>
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.SwitchCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:checked="false"
+                        android:textSize="@dimen/udw_switch_text_size"
+                        android:text="Implement"/>
 
             </LinearLayout>
 
-            <!-- Map -->
-            <LinearLayout android:layout_width="wrap_content"
-                          android:layout_height="wrap_content">
+        </android.support.v7.widget.CardView>
 
-                <android.support.v7.widget.CardView
-                        android:layout_width="385dp"
-                        android:layout_height="385dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="false"
-                        app:cardCornerRadius="4dp"
-                        app:cardElevation="4dp">
+        <android.support.v7.widget.CardView
+                android:layout_width="@dimen/card_controller_width"
+                android:layout_height="@dimen/card_controller_height"
+                android:layout_marginTop="@dimen/card_margin"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="false"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/controller_card_elevation">
 
-                    <ImageView android:layout_width="360dp"
-                               android:layout_height="360dp"
-                               android:scaleType="centerCrop"
-                               android:layout_gravity="center"
-                               android:src="@drawable/map"/>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:padding="@dimen/widget_margin"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical">
 
-                </android.support.v7.widget.CardView>
+                <ImageView android:layout_width="@dimen/card_icon_width"
+                           android:layout_height="@dimen/card_icon_height"
+                           android:scaleType="fitCenter"
+                           android:src="@drawable/vector_drawable_logging"/>
 
-            </LinearLayout>
+                <View android:layout_width="1dp"
+                      android:layout_height="match_parent"
+                      android:layout_marginLeft="@dimen/widget_margin"
+                      android:layout_marginRight="@dimen/widget_margin"
+                      android:background="@color/card_divider_color"/>
 
-            <!-- User -->
-            <LinearLayout android:layout_width="wrap_content"
-                          android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="@dimen/udw_switch_text_size"
+                          android:textStyle="bold"
+                          android:text="Record"/>
 
-                <android.support.v7.widget.CardView
-                        android:layout_width="215dp"
-                        android:layout_height="385dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="false"
-                        app:cardCornerRadius="4dp"
-                        app:cardElevation="4dp">
+                <View android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"/>
 
-                    <LinearLayout android:layout_width="match_parent"
-                                  android:layout_height="match_parent"
-                                  android:layout_margin="@dimen/widget_group_margin"
-                                  android:orientation="vertical">
-
-                        <TextView android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:layout_gravity="center_horizontal"
-                                  android:gravity="center"
-                                  android:textSize="18sp"
-                                  android:textColor="@color/colorAccent"
-                                  android:text="Hello Hai"/>
-
-                        <TextView android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:layout_gravity="center_horizontal"
-                                  android:gravity="center"
-                                  android:textSize="18sp"
-                                  android:text="Welcome another farming day."/>
-
-                        <ImageView android:layout_width="72dp"
-                                   android:layout_height="72dp"
-                                   android:layout_marginTop="@dimen/widget_group_margin"
-                                   android:layout_gravity="center_horizontal"
-                                   android:scaleType="fitCenter"
-                                   android:src="@drawable/owner_haiwang"/>
-
-                        <LinearLayout android:layout_width="match_parent"
-                                      android:layout_height="wrap_content"
-                                      android:layout_marginTop="@dimen/widget_group_margin"
-                                      android:orientation="horizontal">
-
-                            <TextView android:layout_width="wrap_content"
-                                      android:layout_height="wrap_content"
-                                      android:text="Tasks"
-                                      android:layout_weight="1"
-                                      android:textColor="@color/colorAccent"/>
-
-                            <TextView android:layout_width="wrap_content"
-                                      android:layout_height="wrap_content"
-                                      android:text="65/100"
-                                      android:textColor="@color/colorAccent"/>
-
-                        </LinearLayout>
-
-                        <ProgressBar
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:layout_gravity="center_horizontal"
-                                android:max="100"
-                                android:progress="65"
-                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                                android:progressDrawable="@drawable/progressbar_horizontal"/>
-
-                        <LinearLayout android:layout_width="match_parent"
-                                      android:layout_height="wrap_content"
-                                      android:layout_marginTop="@dimen/widget_group_margin"
-                                      android:orientation="horizontal">
-
-                            <TextView android:layout_width="wrap_content"
-                                      android:layout_height="wrap_content"
-                                      android:text="Corn Fields "
-                                      android:layout_weight="1"
-                                      android:textColor="@color/colorAccent"/>
-
-                            <TextView android:layout_width="wrap_content"
-                                      android:layout_height="wrap_content"
-                                      android:text="21/100"
-                                      android:textColor="@color/colorAccent"/>
-
-                        </LinearLayout>
-
-                        <ProgressBar
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:layout_gravity="center_horizontal"
-                                android:max="100"
-                                android:progress="21"
-                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                                android:progressDrawable="@drawable/progressbar_horizontal"/>
-
-                        <LinearLayout android:layout_width="match_parent"
-                                      android:layout_height="wrap_content"
-                                      android:layout_marginTop="@dimen/widget_group_margin"
-                                      android:orientation="horizontal">
-
-                            <TextView android:layout_width="wrap_content"
-                                      android:layout_height="wrap_content"
-                                      android:text="Wheat Fields"
-                                      android:layout_weight="1"
-                                      android:textColor="@color/colorAccent"/>
-
-                            <TextView android:layout_width="wrap_content"
-                                      android:layout_height="wrap_content"
-                                      android:text="87/100"
-                                      android:textColor="@color/colorAccent"/>
-
-                        </LinearLayout>
-
-                        <ProgressBar
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:layout_gravity="center_horizontal"
-                                android:max="100"
-                                android:progress="87"
-                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                                android:progressDrawable="@drawable/progressbar_horizontal"/>
-
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="@dimen/udw_switch_text_size"
+                          android:textStyle="bold"
+                          android:text="45 miles | 2.3 hours"/>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
+
+    <!-- Map Card -->
+    <android.support.v7.widget.CardView
+            android:id="@+id/cardview_map"
+            android:layout_width="@dimen/card_map_width"
+            android:layout_height="@dimen/card_map_height"
+            android:layout_marginLeft="@dimen/card_margin"
+            android:layout_toRightOf="@id/linearlayout_controller_cards"
+            android:layout_below="@id/framelayout_vehicle_area"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="false"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/controller_card_elevation">
+
+        <!-- TODO: use real map -->
+        <ImageView android:layout_width="@dimen/card_map_view_width"
+                   android:layout_height="@dimen/card_map_view_height"
+                   android:scaleType="centerCrop"
+                   android:layout_gravity="center"
+                   android:src="@drawable/map"/>
+
+    </android.support.v7.widget.CardView>
+
+    <!-- User Card -->
+    <android.support.v7.widget.CardView
+            android:id="@+id/cardview_user"
+            android:layout_width="@dimen/card_user_width"
+            android:layout_height="@dimen/card_user_height"
+            android:layout_marginLeft="@dimen/card_margin"
+            android:layout_toRightOf="@id/cardview_map"
+            android:layout_below="@id/framelayout_vehicle_area"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="false"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/controller_card_elevation">
+
+        <include android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 layout="@layout/cardview_user"/>
+
+    </android.support.v7.widget.CardView>
 
 
 </RelativeLayout>
