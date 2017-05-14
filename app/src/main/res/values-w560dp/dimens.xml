@@ -52,5 +52,4 @@
     <dimen name="card_map_view_height">160dp</dimen>
     <dimen name="card_user_width">105dp</dimen>
     <dimen name="card_user_height">@dimen/card_map_height</dimen>
-
 </resources>
