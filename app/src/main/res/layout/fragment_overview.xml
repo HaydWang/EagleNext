@@ -165,7 +165,6 @@
                                 android:layout_marginRight="@dimen/udw_icon_margin"
                                 android:checked="false"
                                 android:textSize="@dimen/udw_switch_text_size"
-                                android:textStyle="bold"
                                 android:text="Implement"/>
 
                     </LinearLayout>
@@ -303,7 +302,7 @@
 
                             <TextView android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
-                                      android:text="40/100"
+                                      android:text="65/100"
                                       android:textColor="@color/colorAccent"/>
 
                         </LinearLayout>
@@ -313,7 +312,7 @@
                                 android:layout_height="2dp"
                                 android:layout_gravity="center_horizontal"
                                 android:max="100"
-                                android:progress="40"
+                                android:progress="65"
                                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                                 android:progressDrawable="@drawable/progressbar_horizontal"/>
 
@@ -324,13 +323,13 @@
 
                             <TextView android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
-                                      android:text="Tasks"
+                                      android:text="Corn Fields "
                                       android:layout_weight="1"
                                       android:textColor="@color/colorAccent"/>
 
                             <TextView android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
-                                      android:text="40/100"
+                                      android:text="21/100"
                                       android:textColor="@color/colorAccent"/>
 
                         </LinearLayout>
@@ -340,7 +339,7 @@
                                 android:layout_height="2dp"
                                 android:layout_gravity="center_horizontal"
                                 android:max="100"
-                                android:progress="40"
+                                android:progress="21"
                                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                                 android:progressDrawable="@drawable/progressbar_horizontal"/>
 
@@ -351,13 +350,13 @@
 
                             <TextView android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
-                                      android:text="Tasks"
+                                      android:text="Wheat Fields"
                                       android:layout_weight="1"
                                       android:textColor="@color/colorAccent"/>
 
                             <TextView android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
-                                      android:text="40/100"
+                                      android:text="87/100"
                                       android:textColor="@color/colorAccent"/>
 
                         </LinearLayout>
@@ -367,7 +366,7 @@
                                 android:layout_height="2dp"
                                 android:layout_gravity="center_horizontal"
                                 android:max="100"
-                                android:progress="40"
+                                android:progress="87"
                                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                                 android:progressDrawable="@drawable/progressbar_horizontal"/>
 
