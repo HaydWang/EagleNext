@@ -3,6 +3,9 @@
     <!-- Xoom -->
     <dimen name="corner_radius">6dp</dimen>
 
+    <dimen name="widget_margin">6dp</dimen>
+    <dimen name="widget_group_margin">20dp</dimen>
+
     <dimen name="topbar_height">128dp</dimen>
     <dimen name="leftbar_width">280dp</dimen>
 
@@ -11,9 +14,6 @@
 
     <dimen name="app_button_width">72dp</dimen>
     <dimen name="app_button_height">72dp</dimen>
-
-    <dimen name="button_margin">6dp</dimen>
-    <dimen name="button_group_margin">20dp</dimen>
 
     <dimen name="time_outline_margin">24dp</dimen>
     <dimen name="time_outline_padding_left">10dp</dimen>
@@ -34,4 +34,9 @@
     <dimen name="udw_button_width">48dp</dimen>
     <dimen name="udw_button_height">48dp</dimen>
     <dimen name="udw_button_margin">16dp</dimen>
+
+    <dimen name="card_margin">4dp</dimen>
+    <dimen name="fragment_stroke">4dp</dimen>
+    <dimen name="overview_vehicle_width">200dp</dimen>
+    <dimen name="overview_vehicle_height">168dp</dimen>
 </resources>

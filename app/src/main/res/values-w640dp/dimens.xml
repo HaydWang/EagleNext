@@ -2,6 +2,9 @@
 <resources>
     <dimen name="corner_radius">4dp</dimen>
 
+    <dimen name="widget_margin">4dp</dimen>
+    <dimen name="widget_group_margin">12dp</dimen>
+
     <dimen name="topbar_height">72dp</dimen>
     <dimen name="leftbar_width">172dp</dimen>
 
@@ -10,9 +13,6 @@
 
     <dimen name="app_button_width">40dp</dimen>
     <dimen name="app_button_height">40dp</dimen>
-
-    <dimen name="button_margin">4dp</dimen>
-    <dimen name="button_group_margin">12dp</dimen>
 
     <dimen name="time_outline_margin">10dp</dimen>
     <dimen name="time_outline_padding_left">0dp</dimen>d
@@ -33,4 +33,9 @@
     <dimen name="udw_button_width">24dp</dimen>
     <dimen name="udw_button_height">24dp</dimen>
     <dimen name="udw_button_margin">6dp</dimen>
+
+    <dimen name="card_margin">4dp</dimen>
+    <dimen name="fragment_stroke">2dp</dimen>
+    <dimen name="overview_vehicle_width">125dp</dimen>
+    <dimen name="overview_vehicle_height">105dp</dimen>
 </resources>

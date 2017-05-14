@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- DP Independent -->
+    <dimen name="top_bar_elevation">10dp</dimen>
+    <dimen name="left_bar_elevation">8dp</dimen>
+    <dimen name="vehicle_card_elevation">4dp</dimen>
+
     <!-- 160dp -->
     <dimen name="corner_radius">2dp</dimen>
+
+    <dimen name="widget_margin">2dp</dimen>
+    <dimen name="widget_group_margin">4dp</dimen>
 
     <dimen name="topbar_height">48dp</dimen>
     <dimen name="leftbar_width">96dp</dimen>
@@ -11,9 +19,6 @@
 
     <dimen name="app_button_width">24dp</dimen>
     <dimen name="app_button_height">24dp</dimen>
-
-    <dimen name="button_margin">2dp</dimen>
-    <dimen name="button_group_margin">4dp</dimen>
 
     <dimen name="time_outline_margin">4dp</dimen>
     <dimen name="time_outline_padding_left">0dp</dimen>
@@ -34,4 +39,10 @@
     <dimen name="udw_button_width">16dp</dimen>
     <dimen name="udw_button_height">16dp</dimen>
     <dimen name="udw_button_margin">2dp</dimen>
+
+
+    <dimen name="card_margin">2dp</dimen>
+    <dimen name="fragment_stroke">2dp</dimen>
+    <dimen name="overview_vehicle_width">125dp</dimen>
+    <dimen name="overview_vehicle_height">105dp</dimen>
 </resources>

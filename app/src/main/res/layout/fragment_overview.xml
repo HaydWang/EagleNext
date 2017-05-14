@@ -1,27 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <!-- Vehicle Area -->
+    <RelativeLayout
+            android:id="@+id/framelayout_vehicle_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:paddingTop="@dimen/widget_group_margin"
+            android:layout_alignParentTop="true"
+            android:elevation="@dimen/vehicle_card_elevation"
+            android:background="@drawable/background_fragment_overview">
+
+        <!-- Left description divide -->
+        <View android:layout_width="1dp"
+              android:layout_height="0dp"
+              android:layout_marginRight="@dimen/widget_group_margin"
+              android:layout_toLeftOf="@+id/vehicle_description_left"
+              android:layout_alignTop="@+id/vehicle_description_left"
+              android:layout_alignBottom="@+id/vehicle_description_left"
+              android:background="@color/vehicle_text_color"/>
+
+        <!-- Left description text -->
+        <LinearLayout
+                android:id="@+id/vehicle_description_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/widget_group_margin"
+                android:layout_toLeftOf="@+id/imageview_vehicle"
+                android:layout_alignBottom="@+id/imageview_vehicle"
+                android:orientation="vertical">
+
+            <!-- TODO: use format textview to avoid layout -->
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/vehicle_text_color"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:text="65"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/widget_margin"
+                        android:textColor="@color/vehicle_text_color_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:text="mph"/>
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/vehicle_text_color"
+                    android:textSize="14sp"
+                    android:text="Altitude"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/vehicle_text_color"
+                    android:text="37.5 miles"/>
+
+        </LinearLayout>
+
+        <!-- Vehicle Image -->
+        <ImageView
+                android:id="@+id/imageview_vehicle"
+                android:layout_width="@dimen/overview_vehicle_width"
+                android:layout_height="@dimen/overview_vehicle_height"
+                android:layout_marginLeft="@dimen/widget_group_margin"
+                android:layout_marginRight="@dimen/widget_group_margin"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tractor"/>
+
+        <!-- Right description divide -->
+        <View android:layout_width="1dp"
+              android:layout_height="0dp"
+              android:layout_toLeftOf="@+id/vehicle_description_right"
+              android:layout_alignTop="@+id/vehicle_description_right"
+              android:layout_alignBottom="@+id/vehicle_description_right"
+              android:background="@color/vehicle_text_color"/>
+
+        <!-- Right description text -->
+        <LinearLayout
+                android:id="@+id/vehicle_description_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/widget_group_margin"
+                android:layout_toRightOf="@+id/imageview_vehicle"
+                android:layout_alignBottom="@+id/vehicle_description_left"
+                android:orientation="vertical">
+
+            <!-- TODO: use format textview to avoid layout -->
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/vehicle_text_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="23.4"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/widget_margin"
+                        android:textColor="@color/vehicle_text_color_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:text="gal"/>
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/vehicle_text_color"
+                    android:textSize="14sp"
+                    android:text="GNSS OFF"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:layout_marginLeft="@dimen/button_margin"
-                  android:layout_marginRight="@dimen/button_margin"
-                  android:orientation="vertical">
+                  android:layout_marginLeft="@dimen/widget_margin"
+                  android:layout_marginRight="@dimen/widget_margin"
+                  android:orientation="vertical"
+                  android:visibility="gone">
 
-        <!-- Vehcile Area -->
+
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="vertical"
                       android:elevation="4dp"
                       android:background="@drawable/background_fragment_overview">
 
-            <ImageView android:layout_width="wrap_content"
-                       android:layout_height="240dp"
-                       android:layout_gravity="center_horizontal"
-                       android:scaleType="fitCenter"
-                       android:src="@drawable/tractor"/>
 
         </LinearLayout>
 
@@ -44,7 +176,7 @@
 
                     <LinearLayout android:layout_width="match_parent"
                                   android:layout_height="wrap_content"
-                                  android:padding="@dimen/button_margin"
+                                  android:padding="@dimen/widget_margin"
                                   android:orientation="horizontal"
                                   android:gravity="center_vertical">
 
@@ -81,7 +213,7 @@
 
                     <LinearLayout android:layout_width="match_parent"
                                   android:layout_height="wrap_content"
-                                  android:padding="@dimen/button_margin"
+                                  android:padding="@dimen/widget_margin"
                                   android:orientation="horizontal"
                                   android:showDividers="none"
                                   android:divider="@drawable/cardview_divider"
@@ -144,7 +276,7 @@
 
                     <LinearLayout android:layout_width="match_parent"
                                   android:layout_height="wrap_content"
-                                  android:padding="@dimen/button_margin"
+                                  android:padding="@dimen/widget_margin"
                                   android:orientation="horizontal"
                                   android:gravity="center_vertical">
 
@@ -180,7 +312,7 @@
 
                     <LinearLayout android:layout_width="match_parent"
                                   android:layout_height="wrap_content"
-                                  android:padding="@dimen/button_margin"
+                                  android:padding="@dimen/widget_margin"
                                   android:orientation="horizontal"
                                   android:showDividers="none"
                                   android:divider="@drawable/cardview_divider"
@@ -264,7 +396,7 @@
 
                     <LinearLayout android:layout_width="match_parent"
                                   android:layout_height="match_parent"
-                                  android:layout_margin="@dimen/button_group_margin"
+                                  android:layout_margin="@dimen/widget_group_margin"
                                   android:orientation="vertical">
 
                         <TextView android:layout_width="wrap_content"
@@ -284,14 +416,14 @@
 
                         <ImageView android:layout_width="72dp"
                                    android:layout_height="72dp"
-                                   android:layout_marginTop="@dimen/button_group_margin"
+                                   android:layout_marginTop="@dimen/widget_group_margin"
                                    android:layout_gravity="center_horizontal"
                                    android:scaleType="fitCenter"
                                    android:src="@drawable/owner_haiwang"/>
 
                         <LinearLayout android:layout_width="match_parent"
                                       android:layout_height="wrap_content"
-                                      android:layout_marginTop="@dimen/button_group_margin"
+                                      android:layout_marginTop="@dimen/widget_group_margin"
                                       android:orientation="horizontal">
 
                             <TextView android:layout_width="wrap_content"
@@ -318,7 +450,7 @@
 
                         <LinearLayout android:layout_width="match_parent"
                                       android:layout_height="wrap_content"
-                                      android:layout_marginTop="@dimen/button_group_margin"
+                                      android:layout_marginTop="@dimen/widget_group_margin"
                                       android:orientation="horizontal">
 
                             <TextView android:layout_width="wrap_content"
@@ -345,7 +477,7 @@
 
                         <LinearLayout android:layout_width="match_parent"
                                       android:layout_height="wrap_content"
-                                      android:layout_marginTop="@dimen/button_group_margin"
+                                      android:layout_marginTop="@dimen/widget_group_margin"
                                       android:orientation="horizontal">
 
                             <TextView android:layout_width="wrap_content"
@@ -382,10 +514,4 @@
     </LinearLayout>
 
 
-    <!-- Screen size detector-->
-    <include android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="end|top"
-             android:elevation="10dp"
-             layout="@layout/content_screen_id"/>
-</FrameLayout>
+</RelativeLayout>

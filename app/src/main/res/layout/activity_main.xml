@@ -2,7 +2,6 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
-
     <LinearLayout
             android:id="@+id/main_cotainer"
             android:layout_width="match_parent"
@@ -14,11 +13,11 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/topbar_height"
-                android:paddingLeft="@dimen/button_margin"
-                android:paddingRight="@dimen/button_margin"
+                android:paddingLeft="@dimen/widget_margin"
+                android:paddingRight="@dimen/widget_margin"
                 android:orientation="horizontal"
-                android:elevation="10dp"
-                android:background="#D0D0D0">
+                android:elevation="@dimen/top_bar_elevation"
+                android:background="@color/fragment_background">
 
             <!-- Status Info Area -->
             <LinearLayout
@@ -26,8 +25,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/time_outline_margin"
                     android:layout_marginBottom="@dimen/time_outline_margin"
-                    android:paddingLeft="@dimen/button_margin"
-                    android:paddingRight="@dimen/button_margin"
+                    android:paddingLeft="@dimen/widget_margin"
+                    android:paddingRight="@dimen/widget_margin"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -45,7 +44,7 @@
                 <ImageButton
                         android:layout_width="@dimen/button_width"
                         android:layout_height="@dimen/button_height"
-                        android:layout_marginLeft="@dimen/button_margin"
+                        android:layout_marginLeft="@dimen/widget_margin"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_warning_black_48dp"
                         android:scaleType="fitCenter"
@@ -54,7 +53,7 @@
                 <ImageButton
                         android:layout_width="@dimen/button_width"
                         android:layout_height="@dimen/button_height"
-                        android:layout_marginLeft="@dimen/button_margin"
+                        android:layout_marginLeft="@dimen/widget_margin"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_info_outline_black_48dp"
                         android:scaleType="fitCenter"
@@ -71,9 +70,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/time_outline_margin"
                     android:layout_marginBottom="@dimen/time_outline_margin"
-                    android:layout_marginRight="@dimen/button_group_margin"
-                    android:paddingLeft="@dimen/button_group_margin"
-                    android:paddingRight="@dimen/button_group_margin"
+                    android:layout_marginRight="@dimen/widget_group_margin"
+                    android:paddingLeft="@dimen/widget_group_margin"
+                    android:paddingRight="@dimen/widget_group_margin"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -112,8 +111,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/time_outline_margin"
                     android:layout_marginBottom="@dimen/time_outline_margin"
-                    android:paddingLeft="@dimen/button_margin"
-                    android:paddingRight="@dimen/button_margin"
+                    android:paddingLeft="@dimen/widget_margin"
+                    android:paddingRight="@dimen/widget_margin"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -127,7 +126,7 @@
                 <ImageButton
                         android:layout_width="@dimen/app_button_width"
                         android:layout_height="@dimen/app_button_width"
-                        android:paddingLeft="@dimen/button_margin"
+                        android:paddingLeft="@dimen/widget_margin"
                         android:src="@drawable/ic_apps_black_48dp"
                         android:scaleType="centerInside"
                         android:background="@android:color/transparent"/>
@@ -144,8 +143,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/time_outline_margin"
                     android:layout_marginBottom="@dimen/time_outline_margin"
-                    android:paddingLeft="@dimen/button_margin"
-                    android:paddingRight="@dimen/button_margin"
+                    android:paddingLeft="@dimen/widget_margin"
+                    android:paddingRight="@dimen/widget_margin"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -181,8 +180,8 @@
             <ImageButton
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
-                    android:layout_marginLeft="@dimen/button_group_margin"
-                    android:layout_marginRight="@dimen/button_margin"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_marginRight="@dimen/widget_margin"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/ic_show_chart_black_48dp"
                     android:scaleType="fitCenter"
@@ -200,7 +199,7 @@
                     android:layout_width="@dimen/leftbar_width"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:elevation="6dp"
+                    android:elevation="@dimen/left_bar_elevation"
                     android:background="#7E7E7E">
 
                 <!-- UDW left list -->
@@ -228,30 +227,11 @@
 
     </LinearLayout>
 
-
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <!--<FrameLayout android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:fitsSystemWindows="true">-->
-
-    <!--<LinearLayout android:id="@+id/fullscreen_content_controls"-->
-    <!--style="?metaButtonBarStyle"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="bottom|center_horizontal"-->
-    <!--android:background="@color/black_overlay"-->
-    <!--android:orientation="horizontal"-->
-    <!--tools:ignore="UselessParent">-->
-
-    <!--<Button android:id="@+id/dummy_button"-->
-    <!--style="?metaButtonBarButtonStyle"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_weight="1"-->
-    <!--android:text="@string/dummy_button"/>-->
-
-    <!--</LinearLayout>-->
-    <!--</FrameLayout>-->
+    <!-- Screen size detector-->
+    <include android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="bottom|right"
+             android:elevation="20dp"
+             layout="@layout/content_screen_id"/>
 
 </FrameLayout>
