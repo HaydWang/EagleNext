@@ -8,5 +8,6 @@
               android:layout_gravity="center"
               android:textSize="55sp"
               android:textColor="@color/colorAccent"
-              android:text="UDW List"/>
+              android:text="Home"/>
+
 </FrameLayout>

@@ -12,14 +12,17 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import com.cnh.android.eaglenext.fragment.HomeFragment;
 import com.cnh.android.eaglenext.fragment.OverviewFragment;
 import com.cnh.android.eaglenext.fragment.TestFragment;
 import com.cnh.android.eaglenext.fragment.UdwFragment;
+import com.cnh.android.eaglenext.fragment.UserFragment;
+import com.cnh.android.eaglenext.fragment.VehicleFragment;
 import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
 import com.cnh.android.eaglenext.view.SingleUdwViewHolder;
@@ -34,10 +37,12 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.recyclerview_leftbar)
     RecyclerView mLeftUdwListView;
 
-
     OverviewFragment mFragmentOverview;
     UdwFragment mFragmentUdw;
     TestFragment mFragmentTest;
+    VehicleFragment mVehicleFragment;
+    HomeFragment mHomeFragment;
+    UserFragment mUserFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +65,7 @@ public class MainActivity extends AppCompatActivity {
         mLeftUdwListView.setItemAnimator(new DefaultItemAnimator());
         mLeftUdwListView.setAdapter(adapter);
 
-        mFragmentOverview = new OverviewFragment();
-        mFragmentUdw = new UdwFragment();
-        mFragmentTest = new TestFragment();
-
-        transactFragment(mFragmentOverview);
+        setFragmentOverview(null);
     }
 
     private void transactFragment(Fragment fragment) {
@@ -73,19 +74,41 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    @OnClick(R.id.navigation_button_home)
-    public void fragmentHome(View view) {
+    @OnClick(R.id.navigation_button_overview)
+    public void setFragmentOverview(View view) {
+        if (mFragmentOverview == null) mFragmentOverview = new OverviewFragment();
         transactFragment(mFragmentOverview);
     }
 
     @OnClick(R.id.navigation_button_udw_1)
     public void fragmentUdw(View view) {
+        if (mFragmentUdw == null) mFragmentUdw = new UdwFragment();
         transactFragment(mFragmentUdw);
     }
 
     @OnClick(R.id.navigation_button_udw_test)
     public void fragmentTest(View view) {
+        if (mFragmentTest == null) mFragmentTest = new TestFragment();
         transactFragment(mFragmentTest);
+    }
+
+    @OnClick(R.id.button_card_manager)
+    public void fragmentCardManager(View view) {
+        // TODO: shall call CardManagerFragment instead of VehicleFragment
+        if (mVehicleFragment == null) mVehicleFragment = new VehicleFragment();
+        transactFragment(mVehicleFragment);
+    }
+
+    @OnClick(R.id.button_home)
+    public void fragmentHome(View view) {
+        if (mHomeFragment == null) mHomeFragment = new HomeFragment();
+        transactFragment(mHomeFragment);
+    }
+
+    @OnClick(R.id.button_user)
+    public void fragmentUser(View view) {
+        if (mUserFragment == null) mUserFragment = new UserFragment();
+        transactFragment(mUserFragment);
     }
 
     @Override

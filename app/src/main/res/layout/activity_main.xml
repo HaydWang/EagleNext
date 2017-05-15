@@ -153,6 +153,7 @@
                     android:background="@drawable/background_corner_main_buttons">
 
                 <ImageButton
+                        android:id="@+id/button_card_manager"
                         android:layout_width="@dimen/button_width"
                         android:layout_height="@dimen/button_height"
                         android:layout_gravity="center_vertical"
@@ -161,6 +162,7 @@
                         android:background="@android:color/transparent"/>
 
                 <ImageButton
+                    android:id="@+id/button_home"
                         android:layout_width="@dimen/button_width"
                         android:layout_height="@dimen/button_height"
                         android:layout_gravity="center_vertical"
@@ -169,6 +171,7 @@
                         android:background="@android:color/transparent"/>
 
                 <ImageButton
+                    android:id="@+id/button_user"
                         android:layout_width="@dimen/button_width"
                         android:layout_height="@dimen/button_height"
                         android:layout_gravity="center_vertical"
@@ -239,7 +242,7 @@
                   android:layout_weight="1"/>
 
             <Button
-                    android:id="@+id/navigation_button_home"
+                    android:id="@+id/navigation_button_overview"
                     android:layout_width="@dimen/navigation_bar_button_width"
                     android:layout_height="@dimen/navigation_bar_button_height"
                     android:layout_gravity="center_vertical"
