@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -109,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
     public void fragmentUser(View view) {
         if (mUserFragment == null) mUserFragment = new UserFragment();
         transactFragment(mUserFragment);
+    }
+
+    boolean showingPopupInfo = false;
+    @BindView(R.id.bubbleview_popup_info) View viewPopupInfo;
+    @OnClick(R.id.button_popup_info)
+    public void onPopupInfo(View view) {
+        showingPopupInfo = !showingPopupInfo;
+        viewPopupInfo.setVisibility(showingPopupInfo ? View.VISIBLE : View.GONE);
     }
 
     @Override
