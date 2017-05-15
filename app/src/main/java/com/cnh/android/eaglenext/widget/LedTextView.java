@@ -58,12 +58,13 @@ public class LedTextView extends TextView {
         setTypeface(font);
     }
 
+    public void startClock() {
+        mHandler.post(mTimeRefresher);
+    }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-
-        mHandler.post(mTimeRefresher);
     }
 
     @Override

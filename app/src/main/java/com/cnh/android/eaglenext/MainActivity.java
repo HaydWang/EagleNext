@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +27,7 @@ import com.cnh.android.eaglenext.fragment.VehicleFragment;
 import com.cnh.android.eaglenext.model.SingleNexUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
 import com.cnh.android.eaglenext.view.SingleNexUdwViewHolder;
+import com.cnh.android.eaglenext.widget.LedTextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     View mFrameLayoutMain;
     @BindView(R.id.recyclerview_leftbar)
     RecyclerView mLeftUdwListView;
+
+    @BindView(R.id.tv_clock_time)
+    LedTextView mClockView;
 
     OverviewFragment mFragmentOverview;
     UdwFragment mFragmentUdw;
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+        mClockView.startClock();
 
         // Left Bar list
         SingleNexUdwRecyclerViewAdapter adapter = new SingleNexUdwRecyclerViewAdapter(this);
@@ -138,12 +144,88 @@ public class MainActivity extends AppCompatActivity {
         transactFragment(mUserFragment);
     }
 
+    // TODO: so ugly, fix me!!!
     boolean showingPopupInfo = false;
     @BindView(R.id.bubbleview_popup_info) View viewPopupInfo;
     @OnClick(R.id.button_popup_info)
-    public void onPopupInfo(View view) {
+    public void onPopupInfoButton(View view) {
         showingPopupInfo = !showingPopupInfo;
         viewPopupInfo.setVisibility(showingPopupInfo ? View.VISIBLE : View.GONE);
+
+        showingConnectivity = false;
+        viewConnectivity.setVisibility(View.GONE);
+
+        showingApps = false;
+        viewApps.setVisibility(View.GONE);
+    }
+
+    boolean showingApps = false;
+    @BindView(R.id.bubbleview_apps) View viewApps;
+    @OnClick(R.id.button_apps)
+    public void onAppsButton(View view) {
+        showingApps = !showingApps;
+        viewApps.setVisibility(showingApps ? View.VISIBLE : View.GONE);
+
+        showingConnectivity = false;
+        viewConnectivity.setVisibility(View.GONE);
+
+        showingPopupInfo = false;
+        viewPopupInfo.setVisibility(View.GONE);
+    }
+
+    boolean showingConnectivity = false;
+    @BindView(R.id.textview_connectivity) TextView tvConnectivity;
+    @BindView(R.id.bubbleview_connectivity_view) View viewConnectivity;
+    @OnClick({R.id.button_gnss, R.id.button_help, R.id.button_signal})
+    public void onConnectivityButtons(View view) {
+        showingConnectivity = !showingConnectivity;
+        String content = "GNSS";
+        if(view != null) {
+            switch (view.getId()) {
+                case R.id.button_help:
+                    content = "Help";
+                    break;
+                case R.id.button_signal:
+                    content = "Telematics";
+                    break;
+            }
+        }
+        tvConnectivity.setText(content);
+        viewConnectivity.setVisibility(showingConnectivity ? View.VISIBLE : View.GONE);
+
+        showingPopupInfo = false;
+        viewPopupInfo.setVisibility(View.GONE);
+
+        showingApps = false;
+        viewApps.setVisibility(View.GONE);
+    }
+
+    @OnClick(R.id.linearlayout_status_info)
+    public void onStatusInfoClicked(View view) {
+        showingConnectivity = !showingConnectivity;
+        tvConnectivity.setText("Status Information");
+        viewConnectivity.setVisibility(showingConnectivity ? View.VISIBLE : View.GONE);
+
+        showingPopupInfo = false;
+        viewPopupInfo.setVisibility(View.GONE);
+
+        showingApps = false;
+        viewApps.setVisibility(View.GONE);
+    }
+
+    @OnClick(R.id.main_cotainer)
+    public void onWholeActivityClocked(View view) {
+        showingConnectivity = false;
+        viewConnectivity.setVisibility(View.GONE);
+        showingPopupInfo = false;
+        viewPopupInfo.setVisibility(View.GONE);
+        showingApps = false;
+        viewApps.setVisibility(View.GONE);
+    }
+
+    @OnClick(R.id.clock_area)
+    public void onClockClicked(View view) {
+        setFragmentOverview(view);
     }
 
     @Override

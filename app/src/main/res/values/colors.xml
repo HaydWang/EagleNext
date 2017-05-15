@@ -10,6 +10,7 @@
 
     <color name="fragment_background">#D0D0D0</color>
     <color name="fragment_stroke">#ffffff</color>
+    <color name="popup_app_list_background">#DDD0D0D0</color>
 
     <color name="button_background">@android:color/background_light</color>
 

@@ -23,6 +23,7 @@
 
             <!-- Status Info Area -->
             <LinearLayout
+                android:id="@+id/linearlayout_status_info"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/widget_margin"
@@ -31,10 +32,11 @@
                 android:paddingRight="@dimen/widget_margin"
                 android:layout_gravity="center_vertical"
                 android:orientation="horizontal"
+                android:clickable="true"
                 android:elevation="0dp"
                 android:background="@drawable/background_corner_info_buttons">
 
-                <ImageButton
+                <ImageView
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
                     android:layout_gravity="center_vertical"
@@ -42,7 +44,7 @@
                     android:scaleType="centerCrop"
                     android:background="@android:color/transparent"/>
 
-                <ImageButton
+                <ImageView
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
                     android:layout_marginLeft="@dimen/widget_margin"
@@ -51,7 +53,7 @@
                     android:scaleType="centerCrop"
                     android:background="@android:color/transparent"/>
 
-                <ImageButton
+                <ImageView
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
                     android:layout_marginLeft="@dimen/widget_margin"
@@ -82,6 +84,7 @@
                 android:background="@android:color/transparent">
 
                 <ImageButton
+                    android:id="@+id/button_gnss"
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
                     android:layout_gravity="center_vertical"
@@ -90,6 +93,7 @@
                     android:background="@android:color/transparent"/>
 
                 <ImageButton
+                    android:id="@+id/button_help"
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
                     android:layout_gravity="center_vertical"
@@ -98,6 +102,7 @@
                     android:background="@android:color/transparent"/>
 
                 <ImageButton
+                    android:id="@+id/button_signal"
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
                     android:layout_gravity="center_vertical"
@@ -122,6 +127,7 @@
 
                 <!-- LED Clock -->
                 <include
+                    android:id="@+id/clock_area"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/widget_margin"
@@ -130,6 +136,7 @@
 
                 <!-- Loading apps button -->
                 <ImageButton
+                    android:id="@+id/button_apps"
                     android:layout_width="@dimen/app_button_width"
                     android:layout_height="@dimen/app_button_width"
                     android:paddingLeft="@dimen/widget_margin"
@@ -325,6 +332,69 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"/>
         </LinearLayout>
+
+        <!-- Popup Connectivity Views -->
+        <com.cpiz.android.bubbleview.BubbleLinearLayout
+            android:id="@+id/bubbleview_connectivity_view"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:layout_marginRight="@dimen/widget_group_margin"
+            android:padding="@dimen/widget_group_margin"
+            android:layout_toRightOf="@id/linearlayout_left_bar"
+            android:layout_below="@id/linearlayout_top_bar"
+            android:elevation="@dimen/popup_info_view_elevation"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:bb_borderColor="@color/colorAccent"
+            app:bb_borderWidth="2dp"
+            app:bb_cornerTopLeftRadius="0dp"
+            app:bb_cornerTopRightRadius="0dp"
+            app:bb_cornerBottomLeftRadius="@dimen/corner_radius"
+            app:bb_cornerBottomRightRadius="@dimen/corner_radius"
+            app:bb_fillColor="@color/popup_app_list_background">
+
+            <TextView
+                android:id="@+id/textview_connectivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/widget_margin"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/primary_text_light"
+                android:scrollbarSize="18sp"
+                android:textStyle="bold"/>
+
+        </com.cpiz.android.bubbleview.BubbleLinearLayout>
+
+        <!-- Popup Applications View -->
+        <com.cpiz.android.bubbleview.BubbleLinearLayout
+            android:id="@+id/bubbleview_apps"
+            android:layout_width="320dp"
+            android:layout_height="220dp"
+            android:layout_marginRight="@dimen/widget_group_margin"
+            android:padding="@dimen/widget_group_margin"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/linearlayout_top_bar"
+            android:elevation="@dimen/popup_info_view_elevation"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:bb_borderColor="@color/colorAccent"
+            app:bb_borderWidth="2dp"
+            app:bb_cornerRadius="@dimen/corner_radius"
+            app:bb_fillColor="@color/popup_app_list_background"
+            app:bb_arrowTo="@id/button_apps">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/widget_margin"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/primary_text_light"
+                android:scrollbarSize="18sp"
+                android:textStyle="bold"
+                android:text="Applications"/>
+
+        </com.cpiz.android.bubbleview.BubbleLinearLayout>
 
         <!-- Popup Info Window -->
         <com.cpiz.android.bubbleview.BubbleLinearLayout
