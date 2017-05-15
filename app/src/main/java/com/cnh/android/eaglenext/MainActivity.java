@@ -12,7 +12,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,9 +23,9 @@ import com.cnh.android.eaglenext.fragment.TestFragment;
 import com.cnh.android.eaglenext.fragment.UdwFragment;
 import com.cnh.android.eaglenext.fragment.UserFragment;
 import com.cnh.android.eaglenext.fragment.VehicleFragment;
-import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
+import com.cnh.android.eaglenext.model.SingleNexUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
-import com.cnh.android.eaglenext.view.SingleUdwViewHolder;
+import com.cnh.android.eaglenext.view.SingleNexUdwViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Left Bar list
-        SingleUdwRecyclerViewAdapter adapter = new SingleUdwRecyclerViewAdapter(this);
+        SingleNexUdwRecyclerViewAdapter adapter = new SingleNexUdwRecyclerViewAdapter(this);
         adapter.setData(generateDummyUdws());
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(
                 new RecyclerItemTouchHelperCallback(adapter));
@@ -67,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         mLeftUdwListView.setAdapter(adapter);
 
         setFragmentOverview(null);
+        //fragmentUdw(null);
     }
 
     private void transactFragment(Fragment fragment) {
@@ -81,9 +81,35 @@ public class MainActivity extends AppCompatActivity {
         transactFragment(mFragmentOverview);
     }
 
-    @OnClick(R.id.navigation_button_udw_1)
+    @OnClick({R.id.navigation_button_udw_1,
+            R.id.navigation_button_udw_2,
+            R.id.navigation_button_udw_3,
+            R.id.navigation_button_udw_4,
+            R.id.navigation_button_udw_5,
+            R.id.navigation_button_udw_6})
     public void fragmentUdw(View view) {
         if (mFragmentUdw == null) mFragmentUdw = new UdwFragment();
+
+        if (view == null) {
+            transactFragment(mFragmentUdw);
+            return;
+        }
+
+        switch (view.getId()) {
+            case R.id.navigation_button_udw_1:
+                mFragmentUdw.setType(0);
+                break;
+            case R.id.navigation_button_udw_2:
+                mFragmentUdw.setType(1);
+                break;
+            case R.id.navigation_button_udw_3:
+                mFragmentUdw.setType(2);
+                break;
+            default:
+                mFragmentUdw.setType(0);
+                break;
+
+        }
         transactFragment(mFragmentUdw);
     }
 
@@ -149,34 +175,34 @@ public class MainActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
     }
 
-    public static List<SingleUdwViewHolder.UdwItem> generateDummyUdws() {
-        List<SingleUdwViewHolder.UdwItem> data = new ArrayList<>();
+    public static List<SingleNexUdwViewHolder.UdwItem> generateDummyUdws() {
+        List<SingleNexUdwViewHolder.UdwItem> data = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
-            SingleUdwViewHolder.UdwItem item = new SingleUdwViewHolder.UdwItem(i);
+            SingleNexUdwViewHolder.UdwItem item = new SingleNexUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_multiline_chart_black_48dp;
             item.content = "Max: 65 mph \nMin: 12 mph";
             data.add(item);
 
-            item = new SingleUdwViewHolder.UdwItem(i);
+            item = new SingleNexUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_local_gas_station_black_48dp;
             item.content = "120 ah";
             data.add(item);
 
-            item = new SingleUdwViewHolder.UdwItem(i);
+            item = new SingleNexUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_nfc_black_48dp;
             item.switchVisible = true;
             item.switchChecked = true;
             item.switchDescription = "Overlap";
             data.add(item);
 
-            item = new SingleUdwViewHolder.UdwItem(i);
+            item = new SingleNexUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_border_bottom_black_48dp;
             item.caption = "Coverage Area";
             item.content = "1.89 ha";
             data.add(item);
 
-            item = new SingleUdwViewHolder.UdwItem(i);
+            item = new SingleNexUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_select_all_black_48dp;
             item.caption = "Area Counter";
             item.content = "0.06 ha";

@@ -4,7 +4,8 @@ import android.graphics.Canvas;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
+import com.cnh.android.eaglenext.model.SingleNexUdwRecyclerViewAdapter;
+import com.cnh.android.eaglenext.model.SingleRecycleViewAdapter;
 
 
 /**
@@ -12,7 +13,7 @@ import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
  */
 
 public class RecyclerItemTouchHelperCallback extends ItemTouchHelper.Callback {
-    private SingleUdwRecyclerViewAdapter mAdapter;
+    private SingleRecycleViewAdapter mAdapter;
 
     public interface ItemTouchHelperAdapter {
         void onItemMove(int fromPosition, int toPosition);
@@ -21,8 +22,8 @@ public class RecyclerItemTouchHelperCallback extends ItemTouchHelper.Callback {
         void clearView(RecyclerView.ViewHolder viewHolder);
     }
 
-    public RecyclerItemTouchHelperCallback(RecyclerView.Adapter adapter){
-        this.mAdapter = (SingleUdwRecyclerViewAdapter)adapter;
+    public RecyclerItemTouchHelperCallback(SingleRecycleViewAdapter adapter){
+        this.mAdapter = adapter;
     }
 
     @Override

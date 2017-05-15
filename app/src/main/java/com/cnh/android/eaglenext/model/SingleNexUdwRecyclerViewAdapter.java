@@ -6,9 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.cnh.android.eaglenext.R;
-import com.cnh.android.eaglenext.view.SingleUdwViewHolder;
+import com.cnh.android.eaglenext.view.SingleNexUdwViewHolder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,11 +16,11 @@ import java.util.List;
 /**
  * Created by Hai on 4/21/17.
  */
-public class SingleUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<SingleUdwViewHolder> {
+public class SingleNexUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<SingleNexUdwViewHolder> {
     private final LayoutInflater mLayoutInflater;
     private final Context mContext;
 
-    protected List<SingleUdwViewHolder.UdwItem> mData;
+    protected List<SingleNexUdwViewHolder.UdwItem> mData;
 
     @Override
     public void onItemMove(int fromPosition, int toPosition) {
@@ -62,18 +61,13 @@ public class SingleUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<Singl
 
     }
 
-    public void setData(List<SingleUdwViewHolder.UdwItem> data) {
-        for (SingleUdwViewHolder.UdwItem udw : mData) {
-            udw.udw.callOnPause(mContext);
-            udw.udw.callOnDestroy(mContext);
-            udw.udw = null;
-        }
+    public void setData(List<SingleNexUdwViewHolder.UdwItem> data) {
         mData.clear();
         mData.addAll(data);
         notifyDataSetChanged();
     }
 
-    public SingleUdwRecyclerViewAdapter(Context context) {
+    public SingleNexUdwRecyclerViewAdapter(Context context) {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
 
@@ -81,23 +75,13 @@ public class SingleUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<Singl
     }
 
     @Override
-    public SingleUdwViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new SingleUdwViewHolder(mLayoutInflater.inflate(R.layout.view_holder_single_udw, parent, false));
+    public SingleNexUdwViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new SingleNexUdwViewHolder(mLayoutInflater.inflate(R.layout.view_holder_single_nex_udw, parent, false));
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ViewGroup udwViewHolder = ((SingleUdwViewHolder)holder).udwViewHolder;
-        View udwView = mData.get(position).udwView;
-        ViewGroup parent = (ViewGroup) udwView.getParent();
-        if (parent == udwViewHolder) return;
-
-        udwViewHolder.removeAllViews();
-        if (parent != null) {
-            parent.removeView(udwView);
-        }
-        udwViewHolder.addView(udwView);
-        mData.get(position).udw.callOnResume(udwView.getContext());
+        mData.get(position).onBindViewHolder((SingleNexUdwViewHolder)holder);
     }
 
     @Override

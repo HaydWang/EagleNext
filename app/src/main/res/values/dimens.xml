@@ -8,6 +8,7 @@
     <dimen name="main_buttons_elevation">0dp</dimen>
     <dimen name="vehicle_card_elevation">4dp</dimen>
     <dimen name="controller_card_elevation">4dp</dimen>
+    <dimen name="popup_info_view_elevation">14dp</dimen>
 
     <!-- 160dp -->
     <dimen name="corner_radius">2dp</dimen>
@@ -71,4 +72,25 @@
     <dimen name="navigation_bar_button_width">24dp</dimen>
     <dimen name="navigation_bar_button_height">@dimen/navigation_bar_button_width</dimen>
 
+    <!-- new -->
+    <dimen name="udw_margin_top">2dp</dimen>
+    <dimen name="udw_margin_bottom">2dp</dimen>
+    <dimen name="udw_margin_left">2dp</dimen>
+    <dimen name="udw_margin_right">2dp</dimen>
+    <dimen name="udw_overlay_margin_top">4dp</dimen>
+    <dimen name="udw_overlay_margin_bottom">4dp</dimen>
+    <dimen name="udw_overlay_margin_left">4dp</dimen>
+    <dimen name="udw_overlay_margin_right">4dp</dimen>
+    <dimen name="udw_corner_size">4dp</dimen>
+    <dimen name="udw_lha_corner_size">3dp</dimen>
+    <dimen name="udw_group_corner_size">1dp</dimen>
+    <dimen name="udw_drag_indicator_padding">15dp</dimen>
+    <dimen name="udw_empty_padding">4dp</dimen>
+    <dimen name="indicators_margin">8dp</dimen>
+    <dimen name="swap_indicator_icon_size">38dp</dimen>
+    <dimen name="udw_tabs_width">85dp</dimen>
+    <dimen name="udw_tabs_height">80dp</dimen>
+    <dimen name="group_indicator_icon_size">38dp</dimen>
+    <dimen name="wrap_udw_width">410dp</dimen>
+    <dimen name="wrap_udw_height">90dp</dimen>
 </resources>
