@@ -14,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.cnh.android.eaglenext.MainActivity;
 import com.cnh.android.eaglenext.R;
-import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
+import com.cnh.android.eaglenext.model.SingleNexUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
 
 /**
@@ -31,7 +31,7 @@ public class TestFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         // Show dummy UDWs
-        SingleUdwRecyclerViewAdapter adapter = new SingleUdwRecyclerViewAdapter(getContext());
+        SingleNexUdwRecyclerViewAdapter adapter = new SingleNexUdwRecyclerViewAdapter(getContext());
         adapter.setData(MainActivity.generateDummyUdws());
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(
                 new RecyclerItemTouchHelperCallback(adapter));

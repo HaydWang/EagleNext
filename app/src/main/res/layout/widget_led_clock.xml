@@ -10,7 +10,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:text="88:88:88"
-            android:textColor="#330000FF"
+            android:textColor="#aaDADADA"
             android:textSize="@dimen/time_text_size"/>
 
     <com.cnh.android.eaglenext.widget.LedTextView
