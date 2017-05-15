@@ -8,17 +8,8 @@
             android:id="@+id/recyclerview_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/udw_margin"
-            android:layout_marginBottom="@dimen/udw_margin"
             android:layout_gravity="center_horizontal|top"
             android:elevation="2dp"
             android:fadeScrollbars="true"/>
-
-    <!-- Screen size detector-->
-    <include android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="end|top"
-             android:elevation="10dp"
-             layout="@layout/content_screen_id"/>
 
 </LinearLayout>

@@ -2,7 +2,10 @@
 <resources>
     <!-- DP Independent -->
     <dimen name="top_bar_elevation">10dp</dimen>
-    <dimen name="left_bar_elevation">8dp</dimen>
+    <dimen name="left_bar_elevation">0dp</dimen>
+    <dimen name="navigation_bar_elevation">0dp</dimen>
+    <dimen name="clock_area_elevation">6dp</dimen>
+    <dimen name="main_buttons_elevation">0dp</dimen>
     <dimen name="vehicle_card_elevation">4dp</dimen>
     <dimen name="controller_card_elevation">4dp</dimen>
 
@@ -42,8 +45,8 @@
     <dimen name="udw_button_margin">2dp</dimen>
 
     <dimen name="fragment_stroke">2dp</dimen>
-    <dimen name="overview_vehicle_width">125dp</dimen>
-    <dimen name="overview_vehicle_height">105dp</dimen>
+    <dimen name="overview_vehicle_width">90dp</dimen>
+    <dimen name="overview_vehicle_height">70dp</dimen>
 
     <dimen name="card_margin">4dp</dimen>
     <dimen name="card_corner_radius">4dp</dimen>
@@ -59,5 +62,13 @@
     <dimen name="card_map_view_height">160dp</dimen>
     <dimen name="card_user_width">105dp</dimen>
     <dimen name="card_user_height">@dimen/card_map_height</dimen>
+
+    <dimen name="overview_vehicle_mph_text_size">20sp</dimen>
+    <dimen name="overview_vehicle_description_text_size">14sp</dimen>
+    <dimen name="overview_vehicle_gal_text_size">16sp</dimen>
+
+    <dimen name="navigation_bar_height">44dp</dimen>
+    <dimen name="navigation_bar_button_width">24dp</dimen>
+    <dimen name="navigation_bar_button_height">@dimen/navigation_bar_button_width</dimen>
 
 </resources>

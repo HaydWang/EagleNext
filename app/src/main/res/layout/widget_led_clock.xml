@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/time_outline_padding_left"
                 android:keepScreenOn="true">
 
     <com.cnh.android.eaglenext.widget.LedTextView
@@ -27,4 +26,4 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/time_text_size"/>
 
-</RelativeLayout>
+</FrameLayout>

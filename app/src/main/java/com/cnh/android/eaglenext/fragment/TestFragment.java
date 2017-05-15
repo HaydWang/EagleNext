@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.cnh.android.eaglenext.MainActivity;
 import com.cnh.android.eaglenext.R;
 import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
@@ -26,11 +27,12 @@ public class TestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_overview, container, false);
+        View view = inflater.inflate(R.layout.fragment_test, container, false);
         ButterKnife.bind(this, view);
 
+        // Show dummy UDWs
         SingleUdwRecyclerViewAdapter adapter = new SingleUdwRecyclerViewAdapter(getContext());
-        //adapter.setData(generateDummyUdws());
+        adapter.setData(MainActivity.generateDummyUdws());
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(
                 new RecyclerItemTouchHelperCallback(adapter));
         itemTouchHelper.attachToRecyclerView(mMainUdwListView);

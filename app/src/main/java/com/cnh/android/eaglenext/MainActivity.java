@@ -2,6 +2,7 @@ package com.cnh.android.eaglenext;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +12,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.cnh.android.eaglenext.fragment.OverviewFragment;
+import com.cnh.android.eaglenext.fragment.TestFragment;
+import com.cnh.android.eaglenext.fragment.UdwFragment;
 import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
 import com.cnh.android.eaglenext.view.SingleUdwViewHolder;
@@ -23,10 +29,15 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.main_cotainer) View mFrameLayoutMain;
-    @BindView(R.id.recyclerview_leftbar) RecyclerView mLeftUdwListView;
+    @BindView(R.id.main_cotainer)
+    View mFrameLayoutMain;
+    @BindView(R.id.recyclerview_leftbar)
+    RecyclerView mLeftUdwListView;
+
 
     OverviewFragment mFragmentOverview;
+    UdwFragment mFragmentUdw;
+    TestFragment mFragmentTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +61,31 @@ public class MainActivity extends AppCompatActivity {
         mLeftUdwListView.setAdapter(adapter);
 
         mFragmentOverview = new OverviewFragment();
+        mFragmentUdw = new UdwFragment();
+        mFragmentTest = new TestFragment();
+
+        transactFragment(mFragmentOverview);
+    }
+
+    private void transactFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragments_container, mFragmentOverview);
+        transaction.replace(R.id.fragments_container, fragment);
         transaction.commit();
+    }
+
+    @OnClick(R.id.navigation_button_home)
+    public void fragmentHome(View view) {
+        transactFragment(mFragmentOverview);
+    }
+
+    @OnClick(R.id.navigation_button_udw_1)
+    public void fragmentUdw(View view) {
+        transactFragment(mFragmentUdw);
+    }
+
+    @OnClick(R.id.navigation_button_udw_test)
+    public void fragmentTest(View view) {
+        transactFragment(mFragmentTest);
     }
 
     @Override
@@ -84,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
     }
 
-    private List<SingleUdwViewHolder.UdwItem> generateDummyUdws() {
+    public static List<SingleUdwViewHolder.UdwItem> generateDummyUdws() {
         List<SingleUdwViewHolder.UdwItem> data = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {

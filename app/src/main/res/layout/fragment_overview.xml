@@ -10,7 +10,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/card_margin"
-            android:paddingTop="@dimen/widget_group_margin"
             android:layout_alignParentTop="true"
             android:elevation="@dimen/vehicle_card_elevation"
             android:background="@drawable/background_fragment_overview">
@@ -20,7 +19,7 @@
                 android:id="@+id/imageview_vehicle"
                 android:layout_width="@dimen/overview_vehicle_width"
                 android:layout_height="@dimen/overview_vehicle_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
+                android:layout_marginLeft="@dimen/widget_margin"
                 android:layout_marginRight="@dimen/widget_group_margin"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitCenter"
@@ -31,7 +30,7 @@
                 android:id="@+id/vehicle_description_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/widget_group_margin"
+                android:layout_marginBottom="@dimen/widget_margin"
                 android:layout_toLeftOf="@id/imageview_vehicle"
                 android:layout_alignBottom="@id/imageview_vehicle"
                 android:orientation="vertical">
@@ -42,20 +41,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                <TextView
+                <com.cnh.android.eaglenext.widget.AutoRefreshTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/vehicle_text_color"
-                        android:textSize="28sp"
+                        android:textSize="@dimen/overview_vehicle_mph_text_size"
                         android:textStyle="bold"
-                        android:text="65"/>
+                        app:dataType="0"/>
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/widget_margin"
                         android:textColor="@color/vehicle_text_color_dark"
-                        android:textSize="14sp"
+                        android:textSize="@dimen/overview_vehicle_description_text_size"
                         android:textStyle="bold"
                         android:text="mph"/>
 
@@ -65,14 +64,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/vehicle_text_color"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/overview_vehicle_description_text_size"
                     android:text="Altitude"/>
 
-            <TextView
+            <com.cnh.android.eaglenext.widget.AutoRefreshTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/vehicle_text_color"
-                    android:text="37.5 miles"/>
+                    android:textSize="@dimen/overview_vehicle_description_text_size"
+                    app:dataType="1"/>
 
         </LinearLayout>
 
@@ -101,20 +101,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                <TextView
+                <com.cnh.android.eaglenext.widget.AutoRefreshTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/vehicle_text_color"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/overview_vehicle_gal_text_size"
                         android:textStyle="bold"
-                        android:text="23.4"/>
+                        app:dataType="2"/>
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/widget_margin"
                         android:textColor="@color/vehicle_text_color_dark"
-                        android:textSize="14sp"
+                        android:textSize="@dimen/overview_vehicle_description_text_size"
                         android:textStyle="bold"
                         android:text="gal"/>
 
@@ -124,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/vehicle_text_color"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/overview_vehicle_description_text_size"
                     android:text="GNSS OFF"/>
 
         </LinearLayout>

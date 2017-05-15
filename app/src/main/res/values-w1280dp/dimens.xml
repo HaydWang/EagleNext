@@ -6,14 +6,14 @@
     <dimen name="widget_margin">6dp</dimen>
     <dimen name="widget_group_margin">20dp</dimen>
 
-    <dimen name="topbar_height">128dp</dimen>
+    <dimen name="topbar_height">96dp</dimen>
     <dimen name="leftbar_width">280dp</dimen>
 
-    <dimen name="button_width">80dp</dimen>
-    <dimen name="button_height">80dp</dimen>
+    <dimen name="button_width">76dp</dimen>
+    <dimen name="button_height">76dp</dimen>
 
-    <dimen name="app_button_width">72dp</dimen>
-    <dimen name="app_button_height">72dp</dimen>
+    <dimen name="app_button_width">76dp</dimen>
+    <dimen name="app_button_height">76dp</dimen>
 
     <dimen name="time_outline_margin">24dp</dimen>
     <dimen name="time_outline_padding_left">10dp</dimen>
@@ -53,4 +53,12 @@
     <dimen name="card_map_view_height">360dp</dimen>
     <dimen name="card_user_width">232dp</dimen>
     <dimen name="card_user_height">@dimen/card_map_height</dimen>
+
+    <dimen name="overview_vehicle_mph_text_size">40sp</dimen>
+    <dimen name="overview_vehicle_description_text_size">20sp</dimen>
+    <dimen name="overview_vehicle_gal_text_size">28sp</dimen>
+
+    <dimen name="navigation_bar_height">56dp</dimen>
+    <dimen name="navigation_bar_button_width">44dp</dimen>
+    <dimen name="navigation_bar_button_height">@dimen/navigation_bar_button_width</dimen>
 </resources>

@@ -9,6 +9,10 @@
         <attr name="metaButtonBarButtonStyle" format="reference"/>
     </declare-styleable>
 
+    <declare-styleable name="AutoRefreshTextView">
+        <attr name="dataType" format="integer" />
+    </declare-styleable>
+
     <declare-styleable name="SquareMenu">
         <attr name="fabSize" format="integer" />
         <attr name="fabColor" format="color" />
