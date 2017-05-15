@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EagleNext.iml" filepath="$PROJECT_DIR$/EagleNext.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EagleOnGo.iml" filepath="$PROJECT_DIR$/.idea/modules/EagleOnGo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EagleNext.iml" filepath="$PROJECT_DIR$/.idea/modules/EagleNext.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

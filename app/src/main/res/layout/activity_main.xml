@@ -3,21 +3,22 @@
              android:layout_height="match_parent"
              android:background="@color/fragment_background">
 
-    <LinearLayout
+    <RelativeLayout
             android:id="@+id/main_cotainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
         <!-- Top Bar -->
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/topbar_height"
-                android:paddingLeft="@dimen/widget_margin"
-                android:paddingRight="@dimen/widget_margin"
-                android:orientation="horizontal"
-                android:elevation="@dimen/top_bar_elevation"
-                android:background="@drawable/background_corners">
+            android:id="@+id/linearlayout_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/topbar_height"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="@dimen/widget_margin"
+            android:paddingRight="@dimen/widget_margin"
+            android:orientation="horizontal"
+            android:elevation="@dimen/top_bar_elevation"
+            android:background="@drawable/background_corners">
 
             <!-- Status Info Area -->
             <LinearLayout
@@ -189,137 +190,125 @@
 
         </LinearLayout>
 
+        <!-- Left Bar -->
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            android:id="@+id/linearlayout_left_bar"
+            android:layout_width="@dimen/leftbar_width"
+            android:layout_height="match_parent"
+            android:layout_below="@id/linearlayout_top_bar"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical"
+            android:elevation="@dimen/left_bar_elevation"
+            android:background="@color/left_bar_background">
 
-            <!-- Left Bar -->
-            <LinearLayout
-                    android:layout_width="@dimen/leftbar_width"
+            <!-- UDW left list -->
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_leftbar"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="0dp"
-                    android:orientation="vertical"
-                    android:elevation="@dimen/left_bar_elevation"
-                    android:background="@color/left_bar_background">
-
-                <!-- UDW left list -->
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/recyclerview_leftbar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/udw_list_margin"
-                        android:layout_marginBottom="@dimen/udw_list_margin"
-                        android:layout_gravity="center_horizontal"
-                        android:fadeScrollbars="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                <!-- Fragment Content Area -->
-                <FrameLayout
-                        android:id="@+id/fragments_container"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#D0D0D0">
-
-                </FrameLayout>
-
-                <!-- Navigation Bar Area -->
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/navigation_bar_height"
-                        android:layout_marginTop="@dimen/widget_margin"
-                        android:orientation="horizontal"
-                        android:elevation="@dimen/navigation_bar_elevation"
-                        android:background="@color/left_bar_background">
-
-                    <!-- TODO use a tab layout -->
-                    <View android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:layout_weight="1"/>
-
-                    <Button
-                            android:id="@+id/navigation_button_home"
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_gravity="center_vertical"
-                            android:text="H"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <Button
-                            android:id="@+id/navigation_button_udw_1"
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_marginLeft="@dimen/widget_group_margin"
-                            android:layout_gravity="center_vertical"
-                            android:text="1"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <Button
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_marginLeft="@dimen/widget_group_margin"
-                            android:layout_gravity="center_vertical"
-                            android:text="2"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <Button
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_marginLeft="@dimen/widget_group_margin"
-                            android:layout_gravity="center_vertical"
-                            android:text="3"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <Button
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_marginLeft="@dimen/widget_group_margin"
-                            android:layout_gravity="center_vertical"
-                            android:text="4"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <Button
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_marginLeft="@dimen/widget_group_margin"
-                            android:layout_gravity="center_vertical"
-                            android:text="5"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <Button
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_marginLeft="@dimen/widget_group_margin"
-                            android:layout_gravity="center_vertical"
-                            android:text="6"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <Button
-                            android:id="@+id/navigation_button_udw_test"
-                            android:layout_width="@dimen/navigation_bar_button_width"
-                            android:layout_height="@dimen/navigation_bar_button_height"
-                            android:layout_marginLeft="@dimen/widget_group_margin"
-                            android:layout_gravity="center_vertical"
-                            android:text="T"
-                            android:background="@drawable/background_cycle_button"/>
-
-                    <View android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:layout_weight="1"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
+                    android:layout_marginTop="@dimen/udw_list_margin"
+                    android:layout_marginBottom="@dimen/udw_list_margin"
+                    android:layout_gravity="center_horizontal"
+                    android:fadeScrollbars="true"/>
 
         </LinearLayout>
 
+        <!-- F    dfdragment Content Area -->
+        <FrameLayout
+                android:id="@+id/fragments_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/linearlayout_top_bar"
+                android:layout_toRightOf="@id/linearlayout_left_bar">
 
-    </LinearLayout>
+        </FrameLayout>
+
+        <!-- Navigation Bar Area -->
+        <LinearLayout
+            android:id="@+id/linearlayout_navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/navigation_bar_height"
+            android:layout_marginTop="@dimen/widget_margin"
+            android:layout_toRightOf="@id/linearlayout_left_bar"
+            android:layout_alignParentBottom="true"
+            android:elevation="@dimen/navigation_bar_elevation"
+            android:background="@color/left_bar_background">
+
+            <!-- TODO use a tab layout -->
+            <View android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_weight="1"/>
+
+            <Button
+                    android:id="@+id/navigation_button_home"
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_gravity="center_vertical"
+                    android:text="H"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <Button
+                    android:id="@+id/navigation_button_udw_1"
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:text="1"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <Button
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:text="2"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <Button
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:text="3"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <Button
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:text="4"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <Button
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:text="5"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <Button
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:text="6"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <Button
+                    android:id="@+id/navigation_button_udw_test"
+                    android:layout_width="@dimen/navigation_bar_button_width"
+                    android:layout_height="@dimen/navigation_bar_button_height"
+                    android:layout_marginLeft="@dimen/widget_group_margin"
+                    android:layout_gravity="center_vertical"
+                    android:text="T"
+                    android:background="@drawable/background_cycle_button"/>
+
+            <View android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_weight="1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <!-- Screen size detector-->
     <include android:layout_width="wrap_content"
