@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
 
     <!-- Vehicle Area -->
     <RelativeLayout
             android:id="@+id/framelayout_vehicle_area"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/vehicle_area_height"
             android:layout_margin="@dimen/card_margin"
             android:layout_alignParentTop="true"
             android:elevation="@dimen/vehicle_card_elevation"
@@ -22,6 +23,7 @@
                 android:layout_marginLeft="@dimen/widget_margin"
                 android:layout_marginRight="@dimen/widget_group_margin"
                 android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/tractor"/>
 
@@ -165,7 +167,7 @@
 
                 <ImageView android:layout_width="@dimen/card_icon_width"
                            android:layout_height="@dimen/card_icon_height"
-                           android:scaleType="fitCenter"
+                           android:scaleType="centerCrop"
                            android:src="@drawable/vector_drawable_steering"/>
 
                 <View android:layout_width="1dp"
@@ -203,7 +205,7 @@
 
                 <ImageView android:layout_width="@dimen/card_icon_width"
                            android:layout_height="@dimen/card_icon_height"
-                           android:scaleType="fitCenter"
+                           android:scaleType="centerCrop"
                            android:src="@drawable/vector_drawable_distance_count"/>
 
                 <View android:layout_width="1dp"
@@ -263,7 +265,7 @@
 
                 <ImageView android:layout_width="@dimen/card_icon_width"
                            android:layout_height="@dimen/card_icon_height"
-                           android:scaleType="fitCenter"
+                           android:scaleType="centerCrop"
                            android:src="@drawable/vector_drawable_implement"/>
 
                 <View android:layout_width="1dp"
@@ -300,7 +302,7 @@
 
                 <ImageView android:layout_width="@dimen/card_icon_width"
                            android:layout_height="@dimen/card_icon_height"
-                           android:scaleType="fitCenter"
+                           android:scaleType="centerCrop"
                            android:src="@drawable/vector_drawable_logging"/>
 
                 <View android:layout_width="1dp"

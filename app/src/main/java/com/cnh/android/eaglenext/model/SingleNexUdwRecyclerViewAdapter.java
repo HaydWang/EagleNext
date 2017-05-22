@@ -76,7 +76,7 @@ public class SingleNexUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<Si
 
     @Override
     public SingleNexUdwViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new SingleNexUdwViewHolder(mLayoutInflater.inflate(R.layout.view_holder_single_nex_udw, parent, false));
+        return new SingleNexUdwViewHolder(mLayoutInflater.inflate(R.layout.view_holder_single_nx_udw, parent, false));
     }
 
     @Override

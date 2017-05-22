@@ -1,469 +1,179 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/main_cotainer"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              xmlns:app="http://schemas.android.com/apk/res-auto"
              android:background="@color/fragment_background">
 
     <RelativeLayout
-        android:id="@+id/main_cotainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <!-- Top Bar -->
-        <LinearLayout
-            android:id="@+id/linearlayout_top_bar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/topbar_height"
-            android:layout_alignParentTop="true"
-            android:paddingLeft="@dimen/widget_margin"
-            android:paddingRight="@dimen/widget_margin"
-            android:orientation="horizontal"
-            android:elevation="@dimen/top_bar_elevation"
-            android:background="@drawable/background_corners">
+            android:layout_height="match_parent">
 
-            <!-- Status Info Area -->
-            <LinearLayout
-                android:id="@+id/linearlayout_status_info"
-                android:layout_width="wrap_content"
+        <!-- TopBar -->
+        <FrameLayout
+                android:id="@+id/viewstub_topbar_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/topbar_height"
+                android:layout_alignParentTop="true"
+                android:visibility="gone">
+        </FrameLayout>
+
+        <!-- LeftBar -->
+        <FrameLayout
+                android:id="@+id/viewstub_leftbar_container"
+                android:layout_width="@dimen/leftbar_width"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/widget_margin"
-                android:layout_marginBottom="@dimen/widget_margin"
-                android:paddingLeft="@dimen/widget_margin"
-                android:paddingRight="@dimen/widget_margin"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal"
-                android:clickable="true"
-                android:elevation="0dp"
-                android:background="@drawable/background_corner_info_buttons">
-
-                <ImageView
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_block_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-                <ImageView
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_marginLeft="@dimen/widget_margin"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_warning_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-                <ImageView
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_marginLeft="@dimen/widget_margin"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_info_outline_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <!-- Connectivity Area-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/widget_margin"
-                android:layout_marginBottom="@dimen/widget_margin"
-                android:layout_marginRight="@dimen/widget_group_margin"
-                android:paddingLeft="@dimen/widget_margin"
-                android:paddingRight="@dimen/widget_margin"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal"
-                android:elevation="0dp"
-                android:background="@android:color/transparent">
-
-                <ImageButton
-                    android:id="@+id/button_gnss"
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_satellite_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-                <ImageButton
-                    android:id="@+id/button_help"
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_live_help_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-                <ImageButton
-                    android:id="@+id/button_signal"
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_wifi_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-            </LinearLayout>
-
-            <!-- Center clock area -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/widget_margin"
-                android:layout_marginBottom="@dimen/widget_margin"
-                android:paddingLeft="@dimen/widget_margin"
-                android:paddingRight="@dimen/widget_margin"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal"
-                android:elevation="@dimen/clock_area_elevation"
-                android:background="@drawable/background_corners">
-
-                <!-- LED Clock -->
-                <include
-                    android:id="@+id/clock_area"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/widget_margin"
-                    android:layout_gravity="center_vertical"
-                    layout="@layout/widget_led_clock"/>
-
-                <!-- Loading apps button -->
-                <ImageButton
-                    android:id="@+id/button_apps"
-                    android:layout_width="@dimen/app_button_width"
-                    android:layout_height="@dimen/app_button_width"
-                    android:paddingLeft="@dimen/widget_margin"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_apps_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <!-- Main buttons area -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/widget_margin"
-                android:layout_marginBottom="@dimen/widget_margin"
-                android:paddingLeft="@dimen/widget_margin"
-                android:paddingRight="@dimen/widget_margin"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal"
-                android:elevation="@dimen/main_buttons_elevation"
-                android:background="@drawable/background_corner_main_buttons">
-
-                <ImageButton
-                    android:id="@+id/button_card_manager"
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_reorder_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-                <ImageButton
-                    android:id="@+id/button_home"
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_pin_drop_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-                <ImageButton
-                    android:id="@+id/button_user"
-                    android:layout_width="@dimen/button_width"
-                    android:layout_height="@dimen/button_height"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_person_outline_black_48dp"
-                    android:scaleType="centerCrop"
-                    android:background="@android:color/transparent"/>
-
-            </LinearLayout>
-
-            <ImageButton
-                android:id="@+id/button_popup_info"
-                android:layout_width="@dimen/button_width"
-                android:layout_height="@dimen/button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_marginRight="@dimen/widget_margin"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_show_chart_black_48dp"
-                android:scaleType="centerCrop"
-                android:background="@drawable/background_cycle_button"/>
-        </LinearLayout>
-
-        <!-- Left Bar -->
-        <LinearLayout
-            android:id="@+id/linearlayout_left_bar"
-            android:layout_width="@dimen/leftbar_width"
-            android:layout_height="match_parent"
-            android:layout_below="@id/linearlayout_top_bar"
-            android:layout_alignParentLeft="true"
-            android:orientation="vertical"
-            android:elevation="@dimen/left_bar_elevation"
-            android:background="@color/left_bar_background">
-
-            <!-- UDW left list -->
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerview_leftbar"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/udw_list_margin"
-                android:layout_marginBottom="@dimen/udw_list_margin"
-                android:layout_gravity="center_horizontal"
-                android:fadeScrollbars="true"/>
-
-        </LinearLayout>
+                android:layout_below="@id/viewstub_topbar_container"
+                android:layout_alignParentLeft="true"
+                android:visibility="gone">
+        </FrameLayout>
 
         <!-- Fragment Content Area -->
         <FrameLayout
-            android:id="@+id/fragments_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/linearlayout_top_bar"
-            android:layout_toRightOf="@id/linearlayout_left_bar">
-
+                android:id="@+id/fragments_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/viewstub_topbar_container"
+                android:layout_toRightOf="@id/viewstub_leftbar_container">
         </FrameLayout>
 
-        <!-- Navigation Bar Area -->
-        <LinearLayout
-            android:id="@+id/linearlayout_navigation_bar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/navigation_bar_height"
-            android:layout_marginTop="@dimen/widget_margin"
-            android:layout_toRightOf="@id/linearlayout_left_bar"
-            android:layout_alignParentBottom="true"
-            android:elevation="@dimen/navigation_bar_elevation"
-            android:background="@color/left_bar_background">
-
-            <!-- TODO use a tab layout -->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <Button
-                android:id="@+id/navigation_button_overview"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_gravity="center_vertical"
-                android:text="H"
-                android:background="@drawable/background_cycle_button"/>
-
-            <Button
-                android:id="@+id/navigation_button_udw_1"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_gravity="center_vertical"
-                android:text="1"
-                android:background="@drawable/background_cycle_button"/>
-
-            <Button
-                android:id="@+id/navigation_button_udw_2"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_gravity="center_vertical"
-                android:text="2"
-                android:background="@drawable/background_cycle_button"/>
-
-            <Button
-                android:id="@+id/navigation_button_udw_3"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_gravity="center_vertical"
-                android:text="3"
-                android:background="@drawable/background_cycle_button"/>
-
-            <Button
-                android:id="@+id/navigation_button_udw_4"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_gravity="center_vertical"
-                android:text="4"
-                android:background="@drawable/background_cycle_button"/>
-
-            <Button
-                android:id="@+id/navigation_button_udw_5"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_gravity="center_vertical"
-                android:text="5"
-                android:background="@drawable/background_cycle_button"/>
-
-            <Button
-                android:id="@+id/navigation_button_udw_6"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_gravity="center_vertical"
-                android:text="6"
-                android:background="@drawable/background_cycle_button"/>
-
-            <Button
-                android:id="@+id/navigation_button_udw_test"
-                android:layout_width="@dimen/navigation_bar_button_width"
-                android:layout_height="@dimen/navigation_bar_button_height"
-                android:layout_marginLeft="@dimen/widget_group_margin"
-                android:layout_gravity="center_vertical"
-                android:text="T"
-                android:background="@drawable/background_cycle_button"/>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-        </LinearLayout>
-
-        <!-- Popup Connectivity Views -->
-        <com.cpiz.android.bubbleview.BubbleLinearLayout
-            android:id="@+id/bubbleview_connectivity_view"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginLeft="@dimen/widget_group_margin"
-            android:layout_marginRight="@dimen/widget_group_margin"
-            android:padding="@dimen/widget_group_margin"
-            android:layout_toRightOf="@id/linearlayout_left_bar"
-            android:layout_below="@id/linearlayout_top_bar"
-            android:elevation="@dimen/popup_info_view_elevation"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:bb_borderColor="@color/colorAccent"
-            app:bb_borderWidth="2dp"
-            app:bb_cornerTopLeftRadius="0dp"
-            app:bb_cornerTopRightRadius="0dp"
-            app:bb_cornerBottomLeftRadius="@dimen/corner_radius"
-            app:bb_cornerBottomRightRadius="@dimen/corner_radius"
-            app:bb_fillColor="@color/popup_app_list_background">
-
-            <TextView
-                android:id="@+id/textview_connectivity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/widget_margin"
-                android:layout_gravity="center_vertical"
-                android:textColor="@android:color/primary_text_light"
-                android:scrollbarSize="18sp"
-                android:textStyle="bold"/>
-
-        </com.cpiz.android.bubbleview.BubbleLinearLayout>
-
-        <!-- Popup Applications View -->
-        <com.cpiz.android.bubbleview.BubbleLinearLayout
-            android:id="@+id/bubbleview_apps"
-            android:layout_width="320dp"
-            android:layout_height="220dp"
-            android:layout_marginRight="@dimen/widget_group_margin"
-            android:padding="@dimen/widget_group_margin"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/linearlayout_top_bar"
-            android:elevation="@dimen/popup_info_view_elevation"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:bb_borderColor="@color/colorAccent"
-            app:bb_borderWidth="2dp"
-            app:bb_cornerRadius="@dimen/corner_radius"
-            app:bb_fillColor="@color/popup_app_list_background"
-            app:bb_arrowTo="@id/button_apps">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/widget_margin"
-                android:layout_gravity="center_vertical"
-                android:textColor="@android:color/primary_text_light"
-                android:scrollbarSize="18sp"
-                android:textStyle="bold"
-                android:text="Applications"/>
-
-        </com.cpiz.android.bubbleview.BubbleLinearLayout>
-
-        <!-- Popup Info Window -->
-        <com.cpiz.android.bubbleview.BubbleLinearLayout
-            android:id="@+id/bubbleview_popup_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/topbar_height"
-            android:layout_marginRight="@dimen/widget_group_margin"
-            android:padding="@dimen/widget_group_margin"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/linearlayout_top_bar"
-            android:elevation="@dimen/popup_info_view_elevation"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:bb_borderColor="@color/colorAccent"
-            app:bb_borderWidth="2dp"
-            app:bb_cornerRadius="@dimen/corner_radius"
-            app:bb_fillColor="@color/button_background"
-            app:bb_arrowTo="@id/button_popup_info">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/card_icon_width"
-                    android:layout_height="@dimen/card_icon_height"
-                    android:layout_gravity="center_vertical"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_info_outline_black_48dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/widget_margin"
-                    android:layout_gravity="center_vertical"
-                    android:textColor="@android:color/primary_text_light"
-                    android:textStyle="bold"
-                    android:text="Vehicle Engine Ready"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/card_icon_width"
-                    android:layout_height="@dimen/card_icon_height"
-                    android:layout_gravity="center_vertical"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_warning_black_48dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/widget_margin"
-                    android:layout_gravity="center_vertical"
-                    android:textColor="@android:color/holo_red_light"
-                    android:textStyle="bold"
-                    android:text="Cannot Engage GNSS Information"/>
-
-            </LinearLayout>
-
-        </com.cpiz.android.bubbleview.BubbleLinearLayout>
+        <!-- BottomBar -->
+        <FrameLayout
+                android:id="@+id/viewstub_bottombar_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bottom_bar_height"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/viewstub_leftbar_container"
+                android:visibility="gone">
+        </FrameLayout>
 
     </RelativeLayout>
+
+    <!-- Popup Connectivity Views -->
+    <com.cpiz.android.bubbleview.BubbleLinearLayout
+        android:id="@+id/bubbleview_connectivity_view"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginLeft="@dimen/widget_group_margin"
+        android:layout_marginRight="@dimen/widget_group_margin"
+        android:padding="@dimen/widget_group_margin"
+        android:elevation="@dimen/popup_info_view_elevation"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:bb_borderColor="@color/colorAccent"
+        app:bb_borderWidth="2dp"
+        app:bb_cornerTopLeftRadius="0dp"
+        app:bb_cornerTopRightRadius="0dp"
+        app:bb_cornerBottomLeftRadius="@dimen/corner_radius"
+        app:bb_cornerBottomRightRadius="@dimen/corner_radius"
+        app:bb_fillColor="@color/popup_app_list_background">
+
+        <TextView
+            android:id="@+id/textview_connectivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/widget_margin"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/primary_text_light"
+            android:scrollbarSize="18sp"
+            android:textStyle="bold"/>
+
+    </com.cpiz.android.bubbleview.BubbleLinearLayout>
+
+    <!-- Popup Applications View -->
+    <com.cpiz.android.bubbleview.BubbleLinearLayout
+        android:id="@+id/bubbleview_apps"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:layout_marginRight="@dimen/widget_group_margin"
+        android:padding="@dimen/widget_group_margin"
+        android:layout_centerHorizontal="true"
+        android:elevation="@dimen/popup_info_view_elevation"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:bb_borderColor="@color/colorAccent"
+        app:bb_borderWidth="2dp"
+        app:bb_cornerRadius="@dimen/corner_radius"
+        app:bb_fillColor="@color/popup_app_list_background">
+        <!--app:bb_arrowTo="@id/button_apps">-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/widget_margin"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/primary_text_light"
+            android:scrollbarSize="18sp"
+            android:textStyle="bold"
+            android:text="Applications"/>
+
+    </com.cpiz.android.bubbleview.BubbleLinearLayout>
+
+    <!-- Popup Info Window -->
+    <com.cpiz.android.bubbleview.BubbleLinearLayout
+        android:id="@+id/bubbleview_popup_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/topbar_height"
+        android:layout_marginRight="@dimen/widget_group_margin"
+        android:padding="@dimen/widget_group_margin"
+        android:layout_alignParentRight="true"
+        android:elevation="@dimen/popup_info_view_elevation"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:bb_borderColor="@color/colorAccent"
+        app:bb_borderWidth="2dp"
+        app:bb_cornerRadius="@dimen/corner_radius"
+        app:bb_fillColor="@color/button_background">
+        <!--app:bb_arrowTo="@id/button_popup_info">-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/card_icon_width"
+                android:layout_height="@dimen/card_icon_height"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_info_outline_black_48dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/widget_margin"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="bold"
+                android:text="Vehicle Engine Ready"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/card_icon_width"
+                android:layout_height="@dimen/card_icon_height"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_warning_black_48dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/widget_margin"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/holo_red_light"
+                android:textStyle="bold"
+                android:text="Cannot Engage GNSS Information"/>
+
+        </LinearLayout>
+
+    </com.cpiz.android.bubbleview.BubbleLinearLayout>
 
     <!-- Screen size detector-->
     <include

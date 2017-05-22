@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearlayout_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="@dimen/navigation_bar_elevation"
+        android:background="@color/left_bar_background">
+
+    <!-- TODO use a tab layout -->
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    <Button
+            android:id="@+id/navigation_button_overview"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:text="H"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <Button
+            android:id="@+id/navigation_button_udw_1"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:text="1"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <Button
+            android:id="@+id/navigation_button_udw_2"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:text="2"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <Button
+            android:id="@+id/navigation_button_udw_3"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:text="3"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <Button
+            android:id="@+id/navigation_button_udw_4"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:text="4"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <Button
+            android:id="@+id/navigation_button_udw_5"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:text="5"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <Button
+            android:id="@+id/navigation_button_udw_6"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:text="6"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <Button
+            android:id="@+id/navigation_button_udw_test"
+            android:layout_width="@dimen/navigation_bar_button_width"
+            android:layout_height="@dimen/navigation_bar_button_height"
+            android:layout_marginLeft="@dimen/widget_group_margin"
+            android:text="T"
+            android:textColor="@color/button_text"
+            android:background="@drawable/background_cycle_button"/>
+
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+</LinearLayout>

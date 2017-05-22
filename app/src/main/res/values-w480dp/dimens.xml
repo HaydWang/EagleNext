@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="topbar_height">64dp</dimen>
-    <dimen name="leftbar_width">152dp</dimen>
+    <!-- Split Screen Nexus 6 -->
+    <dimen name="topbar_height">60dp</dimen>
+    <dimen name="leftbar_width">183dp</dimen>
+    <dimen name="bottom_bar_height">43dp</dimen>
+
+    <dimen name="button_width">40dp</dimen>
+    <dimen name="button_height">@dimen/button_width</dimen>
+
+    <dimen name="vehicle_area_height">124dp</dimen>
+
+    <dimen name="navigation_bar_button_width">32dp</dimen>
 </resources>

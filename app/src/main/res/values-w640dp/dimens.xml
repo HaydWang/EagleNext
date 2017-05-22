@@ -11,9 +11,6 @@
     <dimen name="button_width">40dp</dimen>
     <dimen name="button_height">40dp</dimen>
 
-    <dimen name="app_button_width">40dp</dimen>
-    <dimen name="app_button_height">40dp</dimen>
-
     <dimen name="time_outline_margin">10dp</dimen>
     <dimen name="time_outline_padding_left">0dp</dimen>d
     <dimen name="time_text_size">28sp</dimen>
@@ -57,7 +54,6 @@
     <dimen name="overview_vehicle_description_text_size">14sp</dimen>
     <dimen name="overview_vehicle_gal_text_size">18sp</dimen>
 
-    <dimen name="navigation_bar_height">46dp</dimen>
     <dimen name="navigation_bar_button_width">36dp</dimen>
     <dimen name="navigation_bar_button_height">@dimen/navigation_bar_button_width</dimen>
 </resources>

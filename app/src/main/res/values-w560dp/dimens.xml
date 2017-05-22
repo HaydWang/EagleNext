@@ -11,9 +11,6 @@
     <dimen name="button_width">40dp</dimen>
     <dimen name="button_height">40dp</dimen>
 
-    <dimen name="app_button_width">40dp</dimen>
-    <dimen name="app_button_height">40dp</dimen>
-
     <dimen name="time_outline_margin">10dp</dimen>
     <dimen name="time_outline_padding_left">0dp</dimen>
     <dimen name="time_text_size">24sp</dimen>
@@ -37,6 +34,7 @@
     <dimen name="fragment_stroke">2dp</dimen>
     <dimen name="overview_vehicle_width">100dp</dimen>
     <dimen name="overview_vehicle_height">82dp</dimen>
+    <dimen name="vehicle_area_height">82dp</dimen>
 
     <dimen name="card_margin">4dp</dimen>
     <dimen name="card_corner_radius">4dp</dimen>
@@ -57,7 +55,6 @@
     <dimen name="overview_vehicle_description_text_size">14sp</dimen>
     <dimen name="overview_vehicle_gal_text_size">16sp</dimen>
 
-    <dimen name="navigation_bar_height">42dp</dimen>
     <dimen name="navigation_bar_button_width">32dp</dimen>
     <dimen name="navigation_bar_button_height">@dimen/navigation_bar_button_width</dimen>
 </resources>
