@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EagleNext.iml" filepath="$PROJECT_DIR$/EagleNext.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/nxudw/nxudw.iml" filepath="$PROJECT_DIR$/nxudw/nxudw.iml" />
       <module fileurl="file://$PROJECT_DIR$/panelmanager/panelmanager.iml" filepath="$PROJECT_DIR$/panelmanager/panelmanager.iml" />
     </modules>

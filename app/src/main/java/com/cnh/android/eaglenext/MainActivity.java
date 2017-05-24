@@ -281,12 +281,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (mSinglePanel) {
             mFrameTopbar.addView(mTopView);
-            mFrameTopbar.setVisibility(View.VISIBLE);
-
             mFrameLeftbar.addView(mLeftView);
-            mFrameLeftbar.setVisibility(View.VISIBLE);
-
             mFrameBottombar.addView(mBottomView);
+
+            mFrameTopbar.setVisibility(View.VISIBLE);
+            mFrameLeftbar.setVisibility(View.VISIBLE);
             mFrameBottombar.setVisibility(View.VISIBLE);
         }
 
@@ -409,6 +408,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+        }
     }
 
     public static List<SingleNexUdwViewHolder.UdwItem> generateDummyUdws() {
@@ -456,28 +458,33 @@ public class MainActivity extends AppCompatActivity {
         int type = 2300; //TYPE_CNH_PANEL = FIRST_SYSTEM_WINDOW + 300;
         //int type = WindowManager.LayoutParams.TYPE_TOAST; //TYPE_CNH_PANEL = FIRST_SYSTEM_WINDOW + 300;
 
-        mTopLp = new WindowManager.LayoutParams(0, 0, type, flags, PixelFormat.TRANSPARENT);
-        mTopLp.gravity = Gravity.LEFT | Gravity.TOP;
-        mTopLp.setTitle("CNH-TopPanel");
+        if (mTopLp == null) {
+            mTopLp = new WindowManager.LayoutParams(0, 0, type, flags, PixelFormat.TRANSPARENT);
+            mTopLp.gravity = Gravity.LEFT | Gravity.TOP;
+            mTopLp.setTitle("CNH-TopPanel");
 
-        /* top view */
-        mTopView = View.inflate(getApplicationContext(), R.layout.view_panel_manager_top_panel, null);
+            /* top view */
+            mTopView = View.inflate(getApplicationContext(), R.layout.view_panel_manager_top_panel, null);
+        }
 
-        /* left view param */
-        mLeftLp = new WindowManager.LayoutParams(0, 0, type, flags, PixelFormat.TRANSPARENT);
-        mLeftLp.gravity = Gravity.LEFT | Gravity.TOP;
-        mLeftLp.setTitle("CNH-LeftPanel");
+        if (mLeftLp == null) {
+            /* left view param */
+            mLeftLp = new WindowManager.LayoutParams(0, 0, type, flags, PixelFormat.TRANSPARENT);
+            mLeftLp.gravity = Gravity.LEFT | Gravity.TOP;
+            mLeftLp.setTitle("CNH-LeftPanel");
+            /* left view */
+            mLeftView = View.inflate(getApplicationContext(), R.layout.view_panel_manager_left_panel, null);
+        }
 
-        /* left view */
-        mLeftView = View.inflate(getApplicationContext(), R.layout.view_panel_manager_left_panel, null);
+        if (mBottomLp == null) {
+            /* bottom view param */
+            mBottomLp = new WindowManager.LayoutParams(0, 0, type, flags, PixelFormat.TRANSPARENT);
+            mBottomLp.gravity = Gravity.LEFT | Gravity.TOP;
+            mBottomLp.setTitle("CNH-BottomPanel");
 
-        /* bottom view param */
-        mBottomLp = new WindowManager.LayoutParams(0, 0, type, flags, PixelFormat.TRANSPARENT);
-        mBottomLp.gravity = Gravity.LEFT | Gravity.TOP;
-        mBottomLp.setTitle("CNH-BottomPanel");
-
-        /* top view */
-        mBottomView = View.inflate(getApplicationContext(), R.layout.view_panel_manager_bottom_panel, null);
+            /* top view */
+            mBottomView = View.inflate(getApplicationContext(), R.layout.view_panel_manager_bottom_panel, null);
+        }
 
         updateLayoutParams();
 
@@ -491,9 +498,14 @@ public class MainActivity extends AppCompatActivity {
             mSinglePanel = true;
         }
 
-        topViews = new TopViews(mTopView);
-        leftViews = new LeftViews(mLeftView);
-        bottomViews = new BottomViews(mBottomView);
+        if (topViews == null)
+            topViews = new TopViews(mTopView);
+
+        if (leftViews == null)
+            leftViews = new LeftViews(mLeftView);
+
+        if (bottomViews == null)
+            bottomViews = new BottomViews(mBottomView);
     }
 
     @BindDimen(R.dimen.topbar_height) int topBarHeight;
