@@ -1,12 +1,10 @@
 package com.cnh.android.eaglenext.view;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,7 +13,7 @@ import com.cnh.android.eaglenext.R;
 /**
  * Created by Hai on 4/22/17.
  */
-public class SingleNexUdwViewHolder extends RecyclerView.ViewHolder {
+public class SingleNxUdwViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.udw_icon) ImageView iconView;
     @BindView(R.id.udw_caption) TextView captionView;
     @BindView(R.id.udw_content) TextView contentView;
@@ -44,7 +42,7 @@ public class SingleNexUdwViewHolder extends RecyclerView.ViewHolder {
             this.id = id;
         }
 
-        public void onBindViewHolder(SingleNexUdwViewHolder holder) {
+        public void onBindViewHolder(SingleNxUdwViewHolder holder) {
             holder.iconView.setImageResource(icon);
 
             holder.captionView.setText(caption);
@@ -63,7 +61,7 @@ public class SingleNexUdwViewHolder extends RecyclerView.ViewHolder {
         }
     }
 
-    public SingleNexUdwViewHolder(View view) {
+    public SingleNxUdwViewHolder(View view) {
         super(view);
         ButterKnife.bind(this, view);
     }

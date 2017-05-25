@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.cnh.android.eaglenext.R;
-import com.cnh.android.windowmanager.util.WmUtils;
+import com.cnh.android.eaglenext.util.WmUtils;
 
 import java.lang.reflect.InvocationTargetException;
 

@@ -91,4 +91,6 @@
     <dimen name="group_indicator_icon_size">38dp</dimen>
     <dimen name="wrap_udw_width">410dp</dimen>
     <dimen name="wrap_udw_height">90dp</dimen>
+
+    <integer name="udw_list_grid">2</integer>
 </resources>

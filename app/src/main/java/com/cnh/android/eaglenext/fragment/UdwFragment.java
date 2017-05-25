@@ -47,11 +47,12 @@ public class UdwFragment extends Fragment {
 
     private void initRecyclerAdapter() {
         // Init UDW list with PF UDWs as default
-        mAdapter = new SingleUdwRecyclerViewAdapter(getContext());
+        mAdapter = new SingleUdwRecyclerViewAdapter(mView.getContext());
         changeType(dataType);
         //mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         //mRecyclerView.setLayoutManager(new GridLayoutManager(context, 2));
-        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,
+        mRecyclerView.setLayoutManager(
+                new StaggeredGridLayoutManager(getResources().getInteger(R.integer.udw_list_grid),
                 OrientationHelper.VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.addItemDecoration(
@@ -63,20 +64,28 @@ public class UdwFragment extends Fragment {
     }
 
     private void changeType(int dataType) {
+        List<SingleUdwViewHolder.UdwItem> data = new ArrayList<>();
         switch (dataType) {
             case 0:
-                mAdapter.setData(getPfUdws(mView.getContext()));
-                return;
+                generateAgUdws(mView.getContext(), data);
+                generatePfUdws(mView.getContext(), data);
+                generateYmUdws(mView.getContext(), data);
+                generatePfUdws(mView.getContext(), data);
+                break;
             case 1:
-                mAdapter.setData(getAgUdws(mView.getContext()));
-                return;
+                generateAgUdws(mView.getContext(), data);
+                break;
             case 2:
-                mAdapter.setData(getYmUdws(mView.getContext()));
-                return;
+                generateYmUdws(mView.getContext(), data);
+                break;
+            case 3:
+                generateTestUdws(mView.getContext(), data);
+                break;
             default:
-                mAdapter.setData(getPfUdws(mView.getContext()));
+                generatePfUdws(mView.getContext(), data);
                 break;
         }
+        mAdapter.setData(data);
     }
 
     public void setType(int i) {
@@ -85,9 +94,8 @@ public class UdwFragment extends Fragment {
     }
 
     // TODO: so ugly :(  will build a factory for UDWs.
-    private List<SingleUdwViewHolder.UdwItem> getPfUdws(Context context) {
-        List<SingleUdwViewHolder.UdwItem> data = new ArrayList<>();
-        int i = 0;
+    private void generatePfUdws(Context context, List<SingleUdwViewHolder.UdwItem> data) {
+        int i = data.size();
 
         SingleUdwViewHolder.UdwItem item = new SingleUdwViewHolder.UdwItem(context, i++,
                 "TotalFuelUsedUDW",
@@ -143,13 +151,10 @@ public class UdwFragment extends Fragment {
                 "com.cnh.pf.rscudwservice",
                 "com.cnh.pf.rscudwservice.widget.OverlapControlUDW");
         data.add(item);
-
-        return data;
     }
 
-    private List<SingleUdwViewHolder.UdwItem> getAgUdws(Context context) {
-        List<SingleUdwViewHolder.UdwItem> data = new ArrayList<>();
-        int i = 0;
+    private void generateAgUdws(Context context, List<SingleUdwViewHolder.UdwItem> data) {
+        int i = data.size();
 
         SingleUdwViewHolder.UdwItem item = new SingleUdwViewHolder.UdwItem(context, i++,
                 "CrossTrackErrorStatusUDW",
@@ -162,13 +167,10 @@ public class UdwFragment extends Fragment {
                 "com.cnh.pf.agudwservice",
                 "com.cnh.pf.agudwservice.widget.RowGuideOffsetUDW");
         data.add(item);
-
-        return data;
     }
 
-    private List<SingleUdwViewHolder.UdwItem> getYmUdws(Context context) {
-        List<SingleUdwViewHolder.UdwItem> data = new ArrayList<>();
-        int i = 0;
+    private void generateYmUdws(Context context, List<SingleUdwViewHolder.UdwItem> data) {
+        int i = data.size();
 
         SingleUdwViewHolder.UdwItem item = new SingleUdwViewHolder.UdwItem(context, i++,
                 "AverageYieldUDW",
@@ -217,7 +219,15 @@ public class UdwFragment extends Fragment {
                 "com.cnh.pf.agudwservice",
                 "com.cnh.pf.agudwservice.widget.RowGuideOffsetUDW");
         data.add(item);
+    }
 
-        return data;
+    private void generateTestUdws(Context context, List<SingleUdwViewHolder.UdwItem> data) {
+        int i = data.size();
+
+        SingleUdwViewHolder.UdwItem item = new SingleUdwViewHolder.UdwItem(context, i++,
+                "CrossTrackErrorStatusUDW",
+                "com.cnh.pf.agudwservice",
+                "com.cnh.pf.agudwservice.widget.CrossTrackErrorStatusUDW");
+        data.add(item);
     }
 }

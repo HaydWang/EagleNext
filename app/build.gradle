@@ -27,10 +27,13 @@ repositories {
 
 dependencies {
     // TODO: using *.aar file to reference corelib, need refactor or remove
-    compile(name: 'corelib-debug', ext: 'aar')
+    // To use com.cnh.android.udw.registration.UDW
+    //compile(name: 'corelib-debug', ext: 'aar')
     // TODO: using *.aar file to reference widget, need refactor or remove
-    compile(name: 'widget-debug', ext: 'aar')
-
+    // For hardcore widgets in corelib
+//    compile(name: 'widget-debug', ext: 'aar', {
+//        exclude group: 'com.android.support', module: 'support-v4'
+//    })
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
