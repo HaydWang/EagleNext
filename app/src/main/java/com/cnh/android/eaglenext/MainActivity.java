@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -28,9 +27,9 @@ import com.cnh.android.eaglenext.fragment.TestFragment;
 import com.cnh.android.eaglenext.fragment.UdwFragment;
 import com.cnh.android.eaglenext.fragment.UserFragment;
 import com.cnh.android.eaglenext.fragment.VehicleFragment;
-import com.cnh.android.eaglenext.model.SingleNexUdwRecyclerViewAdapter;
+import com.cnh.android.eaglenext.model.SingleNxUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
-import com.cnh.android.eaglenext.view.SingleNexUdwViewHolder;
+import com.cnh.android.eaglenext.view.SingleNxUdwViewHolder;
 import com.cnh.android.eaglenext.widget.LedTextView;
 
 import java.util.ArrayList;
@@ -67,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
     WindowManager mWm;
     boolean mSinglePanel = false;
+
+    public static final boolean FORCE_SINGLE_PANELS = true;
+    public static final boolean LEFT_PANEL = false;
+    public static final boolean TOP_PANEL = false;
+    public static final boolean BOTTOM_PANEL = true;
+
 
     static int SCREEN_SIZE_WIDTH = 0;
     static int SCREEN_SIZE_HEIGHT = 0;
@@ -192,8 +197,8 @@ public class MainActivity extends AppCompatActivity {
             ButterKnife.bind(this, view);
 
             // Left Bar list
-            SingleNexUdwRecyclerViewAdapter adapter =
-                    new SingleNexUdwRecyclerViewAdapter(MainActivity.this);
+            SingleNxUdwRecyclerViewAdapter adapter =
+                    new SingleNxUdwRecyclerViewAdapter(MainActivity.this);
             adapter.setData(generateDummyUdws());
             ItemTouchHelper itemTouchHelper = new ItemTouchHelper(
                     new RecyclerItemTouchHelperCallback(adapter));
@@ -248,6 +253,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_button_udw_3:
                 mFragmentUdw.setType(2);
                 break;
+            case R.id.navigation_button_udw_4:
+                mFragmentUdw.setType(3);
+                break;
             default:
                 mFragmentUdw.setType(0);
                 break;
@@ -280,13 +288,20 @@ public class MainActivity extends AppCompatActivity {
         addPanels();
 
         if (mSinglePanel) {
-            mFrameTopbar.addView(mTopView);
-            mFrameLeftbar.addView(mLeftView);
-            mFrameBottombar.addView(mBottomView);
+            if (TOP_PANEL) {
+                mFrameTopbar.addView(mTopView);
+                mFrameTopbar.setVisibility(View.VISIBLE);
+            }
 
-            mFrameTopbar.setVisibility(View.VISIBLE);
-            mFrameLeftbar.setVisibility(View.VISIBLE);
-            mFrameBottombar.setVisibility(View.VISIBLE);
+            if (LEFT_PANEL) {
+                mFrameLeftbar.addView(mLeftView);
+                mFrameLeftbar.setVisibility(View.VISIBLE);
+            }
+
+            if (BOTTOM_PANEL) {
+                mFrameBottombar.addView(mBottomView);
+                mFrameBottombar.setVisibility(View.VISIBLE);
+            }
         }
 
         if (getIntent() != null) {
@@ -388,21 +403,21 @@ public class MainActivity extends AppCompatActivity {
         super.onPostResume();
 
         // Not work on Nexus
-        if (mSinglePanel) {
-            View decorView = getWindow().getDecorView();
-            decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_LOW_PROFILE
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        }
-
-        // Work on Nexus
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        if (mSinglePanel) {
+//            View decorView = getWindow().getDecorView();
+//            decorView.setSystemUiVisibility(
+//                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                            | View.SYSTEM_UI_FLAG_LOW_PROFILE
+//                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+//                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+//        }
+//
+//        // Work on Nexus
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     @Override
@@ -413,34 +428,34 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static List<SingleNexUdwViewHolder.UdwItem> generateDummyUdws() {
-        List<SingleNexUdwViewHolder.UdwItem> data = new ArrayList<>();
+    public static List<SingleNxUdwViewHolder.UdwItem> generateDummyUdws() {
+        List<SingleNxUdwViewHolder.UdwItem> data = new ArrayList<>();
 
-        for (int i = 0; i < 3; i++) {
-            SingleNexUdwViewHolder.UdwItem item = new SingleNexUdwViewHolder.UdwItem(i);
+        for (int i = 0; i < 6; i++) {
+            SingleNxUdwViewHolder.UdwItem item = new SingleNxUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_multiline_chart_black_48dp;
             item.content = "Max: 65 mph \nMin: 12 mph";
             data.add(item);
 
-            item = new SingleNexUdwViewHolder.UdwItem(i);
+            item = new SingleNxUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_local_gas_station_black_48dp;
             item.content = "120 ah";
             data.add(item);
 
-            item = new SingleNexUdwViewHolder.UdwItem(i);
+            item = new SingleNxUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_nfc_black_48dp;
             item.switchVisible = true;
             item.switchChecked = true;
             item.switchDescription = "Overlap";
             data.add(item);
 
-            item = new SingleNexUdwViewHolder.UdwItem(i);
+            item = new SingleNxUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_border_bottom_black_48dp;
             item.caption = "Coverage Area";
             item.content = "1.89 ha";
             data.add(item);
 
-            item = new SingleNexUdwViewHolder.UdwItem(i);
+            item = new SingleNxUdwViewHolder.UdwItem(i);
             item.icon = R.drawable.ic_select_all_black_48dp;
             item.caption = "Area Counter";
             item.content = "0.06 ha";
@@ -488,13 +503,16 @@ public class MainActivity extends AppCompatActivity {
 
         updateLayoutParams();
 
-        try {
-            mWm.addView(mTopView, mTopLp);
-            mWm.addView(mLeftView, mLeftLp);
-            mWm.addView(mBottomView, mBottomLp);
-        } catch (Exception e){
-            e.printStackTrace();
-
+        if (!FORCE_SINGLE_PANELS) {
+            try {
+                mWm.addView(mTopView, mTopLp);
+                mWm.addView(mLeftView, mLeftLp);
+                mWm.addView(mBottomView, mBottomLp);
+            } catch (Exception e) {
+                e.printStackTrace();
+                mSinglePanel = true;
+            }
+        } else {
             mSinglePanel = true;
         }
 

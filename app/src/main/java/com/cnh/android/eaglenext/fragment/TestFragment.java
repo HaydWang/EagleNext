@@ -14,7 +14,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.cnh.android.eaglenext.MainActivity;
 import com.cnh.android.eaglenext.R;
-import com.cnh.android.eaglenext.model.SingleNexUdwRecyclerViewAdapter;
+import com.cnh.android.eaglenext.model.SingleNxUdwRecyclerViewAdapter;
+import com.cnh.android.eaglenext.model.SingleUdwRecyclerViewAdapter;
 import com.cnh.android.eaglenext.view.RecyclerItemTouchHelperCallback;
 
 /**
@@ -31,12 +32,16 @@ public class TestFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         // Show dummy UDWs
-        SingleNexUdwRecyclerViewAdapter adapter = new SingleNexUdwRecyclerViewAdapter(getContext());
+        SingleNxUdwRecyclerViewAdapter adapter = new SingleNxUdwRecyclerViewAdapter(view.getContext());
         adapter.setData(MainActivity.generateDummyUdws());
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(
                 new RecyclerItemTouchHelperCallback(adapter));
         itemTouchHelper.attachToRecyclerView(mMainUdwListView);
-        mMainUdwListView.setLayoutManager(new StaggeredGridLayoutManager(3, OrientationHelper.VERTICAL));
+        mMainUdwListView.setLayoutManager(
+                new StaggeredGridLayoutManager(getResources().getInteger(R.integer.udw_list_grid),
+                OrientationHelper.VERTICAL));
+        mMainUdwListView.addItemDecoration(
+                new SingleUdwRecyclerViewAdapter.SpaceItemDecoration(4)); //TODO: move 2px to dimen
         mMainUdwListView.setItemAnimator(new DefaultItemAnimator());
         mMainUdwListView.setAdapter(adapter);
 

@@ -23,8 +23,6 @@ public abstract class GenericUdw<T> {
 
     public enum DroppableArea { SWAP, GROUP, TAB };
 
-    //protected WmUtils mWmUtils;
-
     public interface OnDropListener {
         public void onElementDropped(GenericUdw<?> el, DroppableArea area);
     }
@@ -35,7 +33,8 @@ public abstract class GenericUdw<T> {
 
     public RunningState state = null;
 
-    protected View mView, mUdwView;
+    protected View mView;
+    protected View mUdwView;
     private ContentValues cv = new ContentValues();
 
     protected OnDropListener mDropListener;

@@ -183,4 +183,29 @@
         android:elevation="20dp"
         layout="@layout/content_screen_id"/>
 
+    <!-- Screen size detector-->
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:elevation="20dp"
+        layout="@layout/content_screen_id"/>
+
+    <!-- Screen size detector-->
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:elevation="20dp"
+        layout="@layout/content_screen_id"/>
+
+    <!-- Screen size detector-->
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:elevation="20dp"
+        layout="@layout/content_screen_id"/>
+
+
 </FrameLayout>
