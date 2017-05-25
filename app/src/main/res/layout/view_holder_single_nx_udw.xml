@@ -4,8 +4,7 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="@dimen/udw_height"
-              android:layout_marginTop="@dimen/udw_margin"
-              android:layout_marginBottom="@dimen/udw_margin"
+              android:layout_margin="@dimen/udw_margin"
               android:gravity="center_vertical"
               android:elevation="4dp"
               android:background="@drawable/background_corner_card">

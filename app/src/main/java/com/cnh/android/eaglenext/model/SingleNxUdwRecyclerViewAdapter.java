@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.cnh.android.eaglenext.R;
-import com.cnh.android.eaglenext.view.SingleNexUdwViewHolder;
+import com.cnh.android.eaglenext.view.SingleNxUdwViewHolder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,11 +16,11 @@ import java.util.List;
 /**
  * Created by Hai on 4/21/17.
  */
-public class SingleNexUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<SingleNexUdwViewHolder> {
+public class SingleNxUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<SingleNxUdwViewHolder> {
     private final LayoutInflater mLayoutInflater;
     private final Context mContext;
 
-    protected List<SingleNexUdwViewHolder.UdwItem> mData;
+    protected List<SingleNxUdwViewHolder.UdwItem> mData;
 
     @Override
     public void onItemMove(int fromPosition, int toPosition) {
@@ -61,13 +61,13 @@ public class SingleNexUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<Si
 
     }
 
-    public void setData(List<SingleNexUdwViewHolder.UdwItem> data) {
+    public void setData(List<SingleNxUdwViewHolder.UdwItem> data) {
         mData.clear();
         mData.addAll(data);
         notifyDataSetChanged();
     }
 
-    public SingleNexUdwRecyclerViewAdapter(Context context) {
+    public SingleNxUdwRecyclerViewAdapter(Context context) {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
 
@@ -75,13 +75,13 @@ public class SingleNexUdwRecyclerViewAdapter extends SingleRecycleViewAdapter<Si
     }
 
     @Override
-    public SingleNexUdwViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new SingleNexUdwViewHolder(mLayoutInflater.inflate(R.layout.view_holder_single_nx_udw, parent, false));
+    public SingleNxUdwViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new SingleNxUdwViewHolder(mLayoutInflater.inflate(R.layout.view_holder_single_nx_udw, parent, false));
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        mData.get(position).onBindViewHolder((SingleNexUdwViewHolder)holder);
+        mData.get(position).onBindViewHolder((SingleNxUdwViewHolder)holder);
     }
 
     @Override

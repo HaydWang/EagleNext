@@ -17,8 +17,6 @@ import com.cnh.android.eaglenext.udw.UdwView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.cnh.android.udw.registration.UDW.POSITION_RUNSCREEN;
-
 /**
  * Created by Hai on 4/22/17.
  */
@@ -49,6 +47,8 @@ public class SingleUdwViewHolder extends RecyclerView.ViewHolder {
                     className);
             udwView = udw.getView(context);
             udw.callOnCreate(context);
+
+            int POSITION_RUNSCREEN = 1;  // hardcode to avoid reference to corelib
             udw.callInit(context, POSITION_RUNSCREEN, false);
             //udw.callOnResume(context);
         }

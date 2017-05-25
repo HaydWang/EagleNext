@@ -9,7 +9,6 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.cnh.android.eaglenext.R;
-import com.cnh.android.udw.registration.UDW;
 
 import java.util.UUID;
 
@@ -19,25 +18,21 @@ import java.util.UUID;
 public class MockupUdw extends EditableUdw {
     private String mText = "Mockup UDW";
 
-    private class FrameLayoutUdw extends FrameLayout implements UDW {
+    // TODO: should implement UDW, avoiding import denpendcy lib
+    private class FrameLayoutUdw extends FrameLayout {
 
         public FrameLayoutUdw(Context context) { super(context); }
 
-        @Override
         public void init(Object rsm, String id, String params, int position, boolean grouped, boolean tabbed, String size) { }
 
-        @Override
         public void onCreate(UUID uuid) { }
 
-        @Override
         public void onDestroy() { }
 
-        @Override
         public void onResume() {
 
         }
 
-        @Override
         public void onPause() {
 
         }
